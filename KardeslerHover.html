@@ -1,0 +1,21 @@
+<div class="kutular">
+    <div></div><div></div>
+    <div></div><div></div>
+</div>
+
+<style>
+    .kutular {
+        display: flex;
+        gap: 1rem;
+    }
+    .kutular>div {
+        flex: 1;
+        background-color: dodgerblue;
+        border-radius: 1rem;
+        height: 200px;
+        transition: all .4s;
+    }
+    .kutular:hover> :not(:hover) {
+        opacity: .4;
+    }
+</style>

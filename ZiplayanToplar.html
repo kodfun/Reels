@@ -1,0 +1,47 @@
+<div class="kod-fun">
+  <div class="top t1"></div>
+  <div class="top t2"></div>
+  <div class="top t3"></div>
+</div>
+
+<style>
+  html, body {
+    margin: 0;
+  }
+
+  .kod-fun {
+    background: black;
+    width: 540px;
+    height: 960px;
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .top {
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(#8764e6, #ca38c6);
+    opacity: .75;
+    border-radius: 50%;
+    animation: 3s ease-in infinite alternate zipla;
+  }
+
+  .t1 {
+    animation-delay: .3s;
+  }
+
+  .t2 {
+    animation-delay: .6s;
+  }
+
+  .t3 {
+    animation-delay: .9s;
+  }
+
+  @keyframes zipla {
+    to {
+      margin-top: 860px;
+      filter: hue-rotate(360deg);
+    }
+  }
+</style>

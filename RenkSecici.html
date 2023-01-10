@@ -1,0 +1,42 @@
+<style>
+  body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+</style>
+
+<label for="r">Kırmızı</label>
+<input id="r" type="range" min="0" max="255">
+<label for="g">Yeşil</label>
+<input id="g" type="range" min="0" max="255">
+<label for="b">Mavi</label>
+<input id="b" type="range" min="0" max="255">
+<div id="x"></div>
+
+<script>
+  const r = document.getElementById("r");
+  const g = document.getElementById("g");
+  const b = document.getElementById("b");
+  const x = document.getElementById("x");
+
+  function goster() {
+    x.textContent
+      = document.body.style.background
+      = `rgb(${r.value}, ${g.value}, ${b.value})`;
+  }
+
+  r.oninput = g.oninput = b.oninput = goster;
+  goster();
+</script>
+
+<!-- https://github.com/kodfun -->
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+  body {
+    font-family: 'Poppins', sans-serif; 
+    font-weight: 500;
+  }
+</style>

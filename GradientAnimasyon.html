@@ -1,0 +1,29 @@
+<div class="kodfun cumbus">KODFUN</div>
+
+<style>
+  .kodfun {
+    height: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font: 3rem 'Montserrat', sans-serif;
+    color: white;
+  }
+
+  .cumbus {
+    background: linear-gradient(
+      90deg,
+      #80ff80 0%, 
+      cyan 16%, 
+      magenta 50%, 
+      yellow 83%,
+      #80ff80 100%);
+    background-size: 300% 300%;
+    animation: degis 5s infinite linear;
+  }
+
+  @keyframes degis {
+    from { background-position: 0% 50%; }
+    to { background-position: 150% 50%; }
+  }
+</style>

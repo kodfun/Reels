@@ -1,0 +1,144 @@
+<!-- 
+
+  ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ 
+
+  ÇALIŞAN VE DENENMİŞ
+  KAYNAK KODUN
+  TAMAMINA
+  https://github.com/kodfun
+  ADRESİNDEKİ
+  Reels
+  ADLI
+  REPO'DAN
+  ULAŞABİLİRSİNİZ.
+
+  ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ 
+
+ -->
+
+<div class="alan">
+  <div class="kup">
+    <div class="on">ÖN</div>
+    <div class="arka">ARKA</div>
+    <div class="sag">SAĞ</div>
+    <div class="sol">SOL</div>
+    <div class="ust">ÜST</div>
+    <div class="alt">ALT</div>
+  </div>
+</div>
+
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Montserrat", sans-serif;
+    background-color: black;
+  }
+
+  .alan {
+    width: 50vmin;
+    height: 50vmin;
+    perspective: 100vmin;
+  }
+
+  .kup {
+    width: 50vmin;
+    height: 50vmin;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: translateZ(-25vmin);
+    transition: transform 1s;
+    animation: anim 15s linear infinite;
+  }
+
+  .kup>div {
+    position: absolute;
+    width: 50vmin;
+    height: 50vmin;
+    border: 3px solid black;
+    font-size: 10vmin;
+    font-weight: bold;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .kup>div::after {
+    content: "";
+    display: block;
+    width: 10vmin;
+    height: 10vmin;
+    background: url("logo.png");
+    background-size: cover;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+  }
+
+  .on {
+    background: rgba(255, 0, 0, 0.7);
+    transform: rotateY(0deg) translateZ(25vmin);
+  }
+
+  .sag {
+    background: rgba(255, 255, 0, 0.7);
+    transform: rotateY(90deg) translateZ(25vmin);
+  }
+
+  .arka {
+    background: rgba(0, 255, 0, 0.7);
+    transform: rotateY(180deg) translateZ(25vmin);
+  }
+
+  .sol {
+    background: rgba(0, 255, 255, 0.7);
+    transform: rotateY(-90deg) translateZ(25vmin);
+  }
+
+  .ust {
+    background: rgba(0, 0, 255, 0.7);
+    transform: rotateX(90deg) translateZ(25vmin);
+  }
+
+  .alt {
+    background: rgba(255, 0, 255, 0.7);
+    transform: rotateX(-90deg) translateZ(25vmin);
+  }
+
+  @keyframes anim {
+    0% {
+      transform: translateZ(-25vmin) rotateY(0deg);
+    }
+
+    16% {
+      transform: translateZ(-25vmin) rotateY(-180deg);
+    }
+
+    33% {
+      transform: translateZ(-25vmin) rotateY(-90deg);
+    }
+
+    50% {
+      transform: translateZ(-25vmin) rotateY(90deg);
+    }
+
+    66% {
+      transform: translateZ(-25vmin) rotateX(-90deg);
+    }
+
+    83% {
+      transform: translateZ(-25vmin) rotateX(90deg);
+    }
+
+    100% {
+      transform: translateZ(-25vmin) rotateY(0deg);
+    }
+  }
+</style>

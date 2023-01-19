@@ -1,0 +1,213 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+  integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!-- 
+
+  ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ 
+
+  ÇALIŞAN VE DENENMİŞ
+  KAYNAK KODUN
+  TAMAMINA
+  https://github.com/kodfun
+  ADRESİNDEKİ
+  Reels
+  ADLI
+  REPO'DAN
+  ULAŞABİLİRSİNİZ.
+
+  ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ 
+
+ -->
+<div class="alan">
+  <div class="kup">
+    <div class="on" data-yon="1"><img src="1.jpg" alt="Zoru 1"></div>
+    <div class="arka" data-yon="2"><img src="2.jpg" alt=""></div>
+    <div class="sag" data-yon="3"><img src="3.jpg" alt=""></div>
+    <div class="sol" data-yon="4"><img src="4.jpg" alt=""></div>
+    <div class="ust" data-yon="5"><img src="5.jpg" alt=""></div>
+    <div class="alt" data-yon="6"><img src="6.jpg" alt=""></div>
+  </div>
+</div>
+
+<div class="butonlar">
+  <button>1</button><button>2</button><button>3</button><button>4</button><button>5</button><button>6</button>
+</div>
+
+<div class="kontroller">
+  <button id="durdur"><i class="fa-solid fa-pause"></i></button>
+</div>
+
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Montserrat", sans-serif;
+    background: #c96508;
+  }
+
+  .alan {
+    width: 70vmin;
+    height: 70vmin;
+    perspective: 100vmin;
+  }
+
+  .kup {
+    width: 70vmin;
+    height: 70vmin;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: translateZ(-10vmin);
+    animation-play-state: running;
+  }
+
+  .kup>div {
+    position: absolute;
+    width: 70vmin;
+    height: 70vmin;
+    border: 3px solid #ad3f0f;
+    font-size: 10vmin;
+    font-weight: bold;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .kup>div>img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .kup>div::after {
+    content: attr(data-yon);
+    display: block;
+    width: 10vmin;
+    height: 10vmin;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+  }
+
+  .on {
+    transform: rotateY(0deg) translateZ(35vmin);
+  }
+
+  .sag {
+    transform: rotateY(90deg) translateZ(35vmin);
+  }
+
+  .arka {
+    transform: rotateY(180deg) translateZ(35vmin);
+  }
+
+  .sol {
+    transform: rotateY(-90deg) translateZ(35vmin);
+  }
+
+  .ust {
+    transform: rotateX(90deg) translateZ(35vmin);
+  }
+
+  .alt {
+    transform: rotateX(-90deg) translateZ(35vmin);
+  }
+
+  .butonlar {
+    position: absolute;
+    bottom: 5vh;
+    gap: 1rem;
+    display: flex;
+  }
+
+  .kontroller {
+    position: absolute;
+    top: 5vh;
+  }
+
+  .butonlar>button,
+  .kontroller>button {
+    font: 2rem "Montserrat", sans-serif;
+    display: block;
+    width: 3rem;
+    height: 3rem;
+  }
+</style>
+
+<script>
+  let kup = document.querySelector(".kup");
+  let kontrol = document.getElementById("durdur");
+  let resimModu = false;
+  let anim;
+
+  document.querySelectorAll(".butonlar>button").forEach((btn, key) => {
+    let rotate;
+
+    btn.onclick = (event) => {
+      switch (key) {
+        case 0:
+          rotate = "rotateY(0deg)";
+          break;
+        case 1:
+          rotate = "rotateY(-180deg)";
+          break;
+        case 2:
+          rotate = "rotateY(-90deg)";
+          break;
+        case 3:
+          rotate = "rotateY(90deg)";
+          break;
+        case 4:
+          rotate = "rotateX(-90deg)";
+          break;
+        case 5:
+          rotate = "rotateX(90deg)";
+          break;
+      }
+      anim.pause();
+      anim = kup.animate(
+        [{ "transform": `translateZ(-36vmin) ${rotate}` }],
+        { duration: 1000, iterations: 1, fill: "forwards", easing: "linear" });
+      resimModu = true;
+      kontrol.innerHTML = '<i class="fa-solid fa-play"></i>';
+    };
+  });
+
+  function toggleAnimation() {
+    if (resimModu) {
+      animasyonuBaslat();
+      resimModu = false;
+    }
+    else {
+      if (anim.playState === "running") {
+        anim.pause();
+        kontrol.innerHTML = '<i class="fa-solid fa-play"></i>';
+      }
+      else {
+        anim.play();
+        kontrol.innerHTML = '<i class="fa-solid fa-pause"></i>';
+      }
+    }
+  }
+
+  function animasyonuBaslat() {
+    kontrol.innerHTML = '<i class="fa-solid fa-pause"></i>';
+    anim = kup.animate(
+        [{ "transform": "translateZ(-90vmin) rotateY(25deg) rotateX(45deg)" },
+        { "transform": "translateZ(-90vmin) rotateY(385deg) rotateX(45deg)" }],
+        { duration: 8000, iterations: 9999, easing: "linear" });
+  }
+
+  kontrol.onclick = toggleAnimation;
+  animasyonuBaslat();
+</script>
+
+<!-- 142536 -->

@@ -1,0 +1,35 @@
+<div class="kodfun">
+  <i>K</i><i>O</i><i>D</i><i>F</i><i>U</i><i>N</i>
+  <i>&nbsp;</i><i>W</i><i>A</i><i>V</i><i>E</i>
+</div>
+
+<style>
+  .kodfun>i {
+    animation: jump 2s ease-in-out 0s infinite forwards;
+    display: inline-block;
+    font: normal 600 6rem "Montserrat", sans-serif;
+    letter-spacing: .1em;
+    text-shadow: .05rem .05em .1em rgba(0, 0, 0, .3);
+  }
+
+  @keyframes jump {
+    0%  { transform: translateY(0em);   }
+    33% { transform: translateY(-.6em); }
+    66% { transform: translateY(0em);   }
+  }
+</style>
+
+<script>
+  document.querySelectorAll(".kodfun>i").forEach((v, k) => {
+    v.style.animationDelay = k / 9 + "s";
+  });
+</script>
+
+<style>
+  /* FOR DEMO */
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+</style>

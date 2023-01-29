@@ -1,0 +1,43 @@
+<div id="sound"></div>
+
+<style>
+  #sound {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    height: 8rem;
+  }
+
+  #sound>i {
+    display: block;
+    border-radius: .5rem;
+    width: 1rem;
+    height: 2rem;
+    background: white;
+    animation: anim .5s linear 0s infinite alternate;
+  }
+
+  @keyframes anim {
+    from { height: 2rem; }
+    to   { height: 9rem; }
+  }
+</style>
+
+<script>
+  for (let i = 0; i < 9; i++) {
+    let x = document.createElement("i");
+    x.style.animationDelay = i / 6 + "s";
+    document.getElementById("sound").append(x);
+  }
+</script>
+
+<style>
+  /* FOR DEMO PURPOSES */
+  body {
+    background: #3E56A6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+</style>

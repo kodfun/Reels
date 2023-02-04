@@ -1,0 +1,17 @@
+<script>
+  let a = 0, b = 1;
+
+  while (a < 1000000) {
+    console.log(a);
+    [a, b] = [b, a + b]
+  }
+</script>
+
+<style>
+  body {
+    display: grid;
+    column-gap: 50px;
+    grid-template-columns: auto auto auto auto;
+    font-size: 2em
+  }
+</style>

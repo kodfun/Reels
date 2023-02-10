@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap Tooltip</title>
+  <link rel="stylesheet" href="bootstrap.css">
+  <style>
+  </style>
+</head>
+
+<body class="m-3">
+
+  <ul>
+    <li>
+      <a href="https://deprem.io" data-bs-toggle="tooltip" 
+        data-bs-title="Depremzedelere erzak yardımı yap">
+        deprem.io
+      </a>
+    </li>
+    <li>
+      <a href="https://depremyardim.com" data-bs-toggle="tooltip" 
+        data-bs-title="Depremzedeleri ara ve yardım et">
+        depremyardim.com
+      </a>
+    </li>
+    <li>
+      <a href="https://afetharita.com" data-bs-toggle="tooltip" 
+        data-bs-title="Yardım bildirimlerini haritada göster">
+        afetharita.com
+      </a>
+    </li>
+  </ul>
+
+  <script src="bootstrap.bundle.js"></script>
+  <script>
+    document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      .forEach(x => new bootstrap.Tooltip(x));
+  </script>
+
+</body>
+
+</html>

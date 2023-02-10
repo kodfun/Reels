@@ -1,0 +1,111 @@
+<ol>
+  <li>It may seem a little crazy,</li>
+  <li>pretty baby</li>
+  <li>But I promise</li>
+  <li>mama's gon' be alright</li>
+  <li>And if you ask me to,</li>
+  <li>daddy's gonna buy you a mockingbird</li>
+  <li>I'ma give you the world</li>
+  <li>I'ma buy a diamond ring for you,</li>
+  <li>I'ma sing for you</li>
+  <li>I'll do anything for you</li>
+  <li>to see you smile</li>
+</ol>
+<div class="mid">
+  <div class="kodfun">CSS :nth-child() Selectors<br>
+    <small>by KodFun</small>
+  </div>
+  <img src="1.png" alt="kod" class="kod">
+</div>
+<img src="../logo.png" alt="logo" id="logo">
+<style>
+  ol.c1 > li:first-child {
+    color: darkred;
+  }
+  ol.c2 > li:last-child {
+    color: darkred;
+  }
+  ol.c3 > li:nth-child(7) {
+    color: darkred;
+  }
+  ol.c4 > li:nth-child(odd) {
+    color: darkred;
+  }
+  ol.c5 > li:nth-child(even) {
+    color: darkred;
+  }
+  ol.c6 > li:nth-child(3n) {
+    color: darkred;
+  }
+</style> 
+
+<style>
+  /* FOR DEMO PURPOSES */
+  html, body {
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    font-family: "Montserrat", sans-serif;
+    font-size: 4vw;
+    color: white;
+    background: #101010 url("eminem.png") no-repeat right top fixed; 
+  }
+  ol {
+    margin: 8vh 8vw;
+  }
+  li {
+    padding-left: 2vw;
+  }
+  .mid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    flex-direction: column;
+  }
+  .kodfun {
+    text-align: center;
+    font-size: 6vw;
+    font-weight: 700;
+    color: #F8AB59;
+    line-height: 2;
+  }
+  .kodfun small {
+    font-size: 3vw;
+    font-weight: 400;
+    color: #F8AB59;
+  }
+  #logo {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 20vw;
+  }
+  .kod {
+    width: 80%;
+    margin-top: 8vh;
+    display: none;
+  }
+</style>
+<script>
+  const kod = document.querySelector(".kod");
+  const kf = document.querySelector(".kodfun");
+  let timerId;
+  
+
+  setTimeout(() => {
+    kf.style.display = "none";
+    kod.style.display = "block";
+    apply();
+    timerId = setInterval(apply, 3000);
+  }, 2000);
+
+  let x = 1;
+  function apply() {
+    const ol = document.querySelector("ol");
+    kod.src = x + ".png";
+    ol.className = "c" + x++;
+    if (x > 6) clearInterval(timerId);
+  }
+</script>

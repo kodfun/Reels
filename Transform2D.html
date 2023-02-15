@@ -1,0 +1,115 @@
+<style>
+  body {
+    font-family: "Open Sans", serif;
+    background: linear-gradient(45deg, #f3e7e9, #e3eeff);
+  }
+
+  h1 {
+    text-align: center;
+    color:rgba(227, 238, 255);
+    background-color: #9042be;
+  }
+
+  body {
+    margin: 5vh 10vw;
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+    position: relative;
+  }
+
+  #options {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(45deg, #82559d80, rgba(227, 238, 255, 0.467));
+  }
+
+  #options>div {
+    display: flex;
+    align-items: center;
+    padding: 0.25em;
+  }
+
+  #logo {
+    background: url("logo.png") no-repeat;
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+    transition: all 1s;
+  }
+
+  #logoGhost {
+    background: url("logo.png") no-repeat;
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    opacity: 0.5;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    filter: blur(30px) brightness(1);
+  }
+</style>
+
+<video autoplay>
+  <source src="bg.mov">
+</video>
+<h1>CSS 2D TRANSFORMATION</h1>
+<div class="container">
+  <div id="logoGhost"></div>
+  <div id="logo"></div>
+</div>
+<div id="options"></div>
+
+<script>
+  let values = [
+    "rotate(45deg)",
+    "scale(2)",
+    "translateX(80px)",
+    "translate(80px, 80px)",
+    "skew(30deg, 30deg)",
+    "skewY(-30deg)",
+    "matrix(0, 1, 1, 0, 50, 50)",
+  ];
+
+  let options = document.getElementById("options");
+  let logo = document.getElementById("logo");
+
+  for (let value of values) {
+    let div = document.createElement("div");
+    let input = document.createElement("input");
+    input.name = "transform";
+    input.onclick = () => {
+      logo.style.transform = value;
+    };
+    input.type = "radio";
+    div.textContent = "transform: " + value;
+    div.prepend(input);
+    options.append(div);
+  }
+  
+  document.addEventListener("DOMContentLoaded", function(){
+    document.body.addEventListener("click", playVideo);
+    function playVideo() {
+        const video = document.querySelector('video');
+        if(!video.playing) {
+            video.play();
+        }
+    }
+});
+</script>

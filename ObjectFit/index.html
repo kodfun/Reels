@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS: Object-Fit</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+    }
+    body {
+      background-color: #0093E9;
+      background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+
+      font-family: montserrat, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+    }
+    h1 {
+      color: #fff;
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      margin-top: 5rem;
+    }
+    h2 {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 2rem;
+      margin-top: 0rem;
+      margin-bottom: 2rem;
+      text-transform: lowercase;
+    }
+    h2::before, h2::after {
+      content: "“";
+      color: rgba(255, 255, 255, 0.7);
+    }
+    h2::after {
+      content: "”";
+    }
+    #code {
+      position: relative;
+    }
+    #arrow {
+      position: absolute;
+      top: 63%;
+      left: 50%;
+      font-size: 7rem;
+      color: yellow;
+      animation: pulp 1s infinite;
+      z-index: 999;
+    }
+    @keyframes pulp {
+      0% {
+        transform: scale(1) rotate(225deg);
+      }
+      50% {
+        transform: scale(1.2) rotate(225deg);
+      }
+      100% {
+        transform: scale(1) rotate(225deg);
+      }
+    }
+    #output, #code {
+      width: 60%;
+      margin-bottom: 2rem;
+    }
+
+    #output img {
+      width: 100%;
+      height: 100%;
+      object-fit: fill;
+    }
+
+    #code img {
+      width: 100%;
+    }
+
+    #logo {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 15%;
+      margin: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="title">?</h1>
+  <h2 id="desc">?</h2>
+  <div id="output">
+    <img src="output/1.png">
+  </div>
+  <div id="code">
+    <img id="imgCode" src="code/2.png">
+    <i id="arrow" class="fa-solid fa-up-long"></i>
+  </div>
+  <img id="logo" src="../logo.png">
+
+  <script>
+    const title = document.getElementById("title");
+    const desc = document.getElementById("desc");
+    const output = document.getElementById("output");
+    const code = document.getElementById("code");
+    const imgCode = document.getElementById("imgCode");
+    const arrow = document.getElementById("arrow");
+    const logo = document.getElementById("logo");
+
+    const titles = [
+      "object-fit: fill",
+      "object-fit: contain",
+      "object-fit: cover",
+      "object-fit: none",
+      "object-fit: scale-down"
+    ];
+    const descs = [
+      "Kabını doldurur, en boy oranı bozulur",
+      "Kabına sığdırır, en boy oranını korur",
+      "Kabını örter, en boy oranını korur",
+      "Ölçekleme yapmaz",
+      "Kabını taşırtmaz, küçükse büyütmez"
+    ];
+    const outputs = [
+      "output/1.png",
+      "output/2.png",
+      "output/3.png",
+      "output/4.png",
+      "output/5.png"
+    ];
+    const codes = [
+      "code/1.png",
+      "code/2.png",
+      "code/3.png",
+      "code/4.png",
+      "code/5.png"
+    ];
+
+    let i = 0;
+    setInterval(() => {
+      title.innerHTML = titles[i];
+      desc.innerHTML = descs[i];
+      output.innerHTML = `<img src="${outputs[i]}">`;
+      imgCode.src = codes[i];
+      i++;
+      if (i == titles.length) i = 0;
+    }, 3000);
+  </script>
+</body>
+</html>

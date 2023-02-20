@@ -11,7 +11,7 @@
   }
 
   body {
-    margin: 5vh 10vw;
+    margin: 7vh 10vw;
   }
 
   .container {
@@ -25,13 +25,20 @@
   #options {
     display: flex;
     flex-direction: column;
-    background: linear-gradient(45deg, #82559d80, rgba(227, 238, 255, 0.467));
+    color: white;
+    background: linear-gradient(45deg, rgba(163, 50, 152, 0.7), rgba(130, 85, 157, 0.4));
+    border-radius: .5rem;
+    padding: 1rem;
   }
 
   #options>div {
     display: flex;
     align-items: center;
     padding: 0.25em;
+  }
+
+  #options>div>input {
+    margin-right: 0.5em;
   }
 
   #logo {
@@ -62,12 +69,18 @@
     height: 100%;
     object-fit: cover;
     z-index: -1;
-    filter: blur(30px) brightness(1);
+    /* filter: blur(30px) brightness(.8); */
+  }
+
+  footer {
+    text-align: center;
+    color: white;
+    margin-top: 2rem;
   }
 </style>
 
-<video autoplay>
-  <source src="bg.mov">
+<video autoplay loop>
+  <source src="assets/bg.mp4">
 </video>
 <h1>CSS 2D TRANSFORMATION</h1>
 <div class="container">
@@ -75,6 +88,9 @@
   <div id="logo"></div>
 </div>
 <div id="options"></div>
+<footer>
+  <small>Source Code on</small><br>https://github.com/kodfun/Reels
+</footer>
 
 <script>
   let values = [

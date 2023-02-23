@@ -1,0 +1,113 @@
+<style>
+  html {
+    font-size: 36px;
+  }
+  .mid {
+    width: 60%;
+  }
+  input {
+    font-size: 1.2rem;
+    width: 100%;
+    color: #234558;
+    padding: .2rem .5rem;
+  }
+  body {
+    background-image: linear-gradient(160deg, #1D88CF 0%, #1A5692 100%);
+    font-family: "Montserrat", sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5vh;
+    color: #FCC32A;
+  }
+  h1 {
+    text-align: center;
+    font-size: 2.5rem;
+  }
+  h2 {
+    text-align: center;
+    font-size: .9rem;
+  }
+  h1, h2 {
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+  pre {
+    align-self: flex-start;
+    color: #9ffa98;
+  }
+  #logo {
+    width: 22vw;
+    height: 22vw;
+    position: absolute;
+    bottom: 2vw;
+    left: 4vw;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5)) hue-rotate(300deg);
+  }
+  #algo {
+    width: 22vw;
+    height: 22vw;
+    position: absolute;
+    bottom: 2vw;
+    right: 4vw;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+  }
+  #thinking {
+    width: 40vw;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 8vw;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+  }
+</style>
+
+<h1>Can you solve it?</h1>
+<h2>Find All Permutations of a String in Javascript</h2>
+<div class="mid">
+  <input type="text" id="str" oninput="writePermutations()" value="♠♥♦♣">
+  <pre id="permutations"></pre>
+</div>
+<!-- <img src="assets/LogoInverse.png" alt="logo" id="logo">
+<img src="assets/AlgorithmChallenge.png" alt="algorithm challenge" id="algo">
+<img src="assets/hmmm-thinking.gif" alt="thinking" id="thinking"> -->
+
+<script>
+  // permutations of a string
+  function permutate(str) {
+    var permutations = [];
+    if (str.length == 1) {
+      permutations.push(str);
+      return permutations;
+    }
+    for (var i = 0; i < str.length; i++) {
+      var char = str[i];
+      if (str.indexOf(char) != i)
+        continue;
+      var remainingString = str.slice(0, i) + str.slice(i + 1, str.length);
+      for (var subPermutation of permutate(remainingString)) {
+        permutations.push(char + subPermutation)
+      }
+    }
+    return permutations;
+  }
+  
+  function formatArray(arr) {
+    var str = arr.length + " Permutation(s)\n";
+    str += "[\n";
+    for (var i = 0; i < arr.length; i++) {
+      str += "    \"" + arr[i] + "\"\n";
+    }
+    str += "]";
+    return str;
+  }
+
+  function writePermutations() {
+    var str = document.getElementById("str").value;
+    var permutations = permutate(str);
+    document.getElementById("permutations").innerHTML = formatArray(permutations);
+  }
+
+  writePermutations();
+</script>

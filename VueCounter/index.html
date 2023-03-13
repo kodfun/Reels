@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>A Counter App Built Using Vue.js by KodFun</title>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+</head>
+
+<body>
+
+  <div id="app">
+    <button @click="count++">
+      {{ count }}
+    </button>
+  </div>
+
+  <script>
+    Vue.createApp({
+      data() {
+        return {
+          count: 0
+        };
+      }
+    }).mount("#app");
+  </script>
+
+</body>
+
+</html>

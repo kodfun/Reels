@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vue.js Counter</title>
+  <title>Vue.js ile Counter</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     *,
     *::before,
@@ -12,39 +14,143 @@
       box-sizing: border-box;
     }
 
-    html, body {
+    html,
+    body {
       height: 100%;
       margin: 0;
       padding: 0;
       background: linear-gradient(45deg, #d037e8, #4b0b17);
+      font-family: "Open Sans", sans-serif;
     }
+
     body {
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: stretch;
       flex-direction: column;
+      color: white;
+      padding-bottom: 15vh;
+      border: 3px solid green;
     }
+
+    header {
+      padding: 1vw;
+      margin: 1vw 5vw;
+      font-size: 5rem;
+      background: rgba(0, 0, 0, 0.25);
+    }
+
     main {
       background-color: #1e1e1e;
-      border: 3px solid green;
-      padding: 5vw;
-      margin: 5vw;
+      padding: 1vw;
+      margin: 2vw 5vw 1vw;
+      position: relative;
     }
+
     main>img {
       width: 100%;
       object-fit: contain;
     }
+
+    footer {
+      padding: 2vw;
+      margin: 2vw 5vw;
+      font-size: 2rem;
+      background: rgba(0, 0, 0, 0.25);
+    }
+
+    header,
+    main,
+    footer {
+      border-radius: 1rem;
+      text-align: center;
+    }
+
+    .step {
+      position: absolute;
+      left: 5%;
+      right: 5%;
+      background-color: rgb(39, 119, 215);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 3vw;
+      text-transform: capitalize;
+      border: .4vh dashed #7ffbae;
+      padding: 0 1vw;
+      transition: all 1s;
+    }
+    .step::before {
+      content: attr(data-desc);
+      left: 1vw;
+      font-size: 2.3vw;
+      font-weight: bold;
+      background-color: rgb(182, 50, 182);
+      color: white;
+      display: block;
+      width: 3.5vw;
+      height: 3.5vw;
+      border-radius: 50%;
+    }
+    .step::after {
+      content: "";
+      font-family: "Font Awesome 5 Free";
+      cursor: pointer;
+    }
+    .step1 {
+      top: 24%;
+      bottom: 69%;
+    }
+    .step2 {
+      top: 43%;
+      bottom: 43%;
+      right: 55%;
+    }
+    .step3 {
+      top: 60%;
+      bottom: 15%;
+      right: 55%;
+    }
+    #logo {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 25vw;
+      height: 25vw;
+      object-fit: contain;
+      padding: 5vw;
+    }
   </style>
 </head>
+
 <body>
+  <img src="../logo.png" alt="" id="logo">
   <header>
-    <h1>Vue.js Counter</h1>
+    Vue.js Counter
   </header>
   <main>
     <img src="code.png" alt="code">
+    <div class="step step1" data-desc="1">
+      Vue.js kütüphanesini ekle
+    </div>
+    <div class="step step2" data-desc="2">
+      Template Oluştur
+    </div>
+    <div class="step step3" data-desc="3">
+      Vue<br> Uygulamasını<br> Başlat
+    </div>
   </main>
   <footer>
-    https://github.com/kodfun/Reels/VueCounter
+    https://github.com/kodfun/Reels
   </footer>
+
+  <script>
+    document.querySelectorAll(".step").forEach((step) => {
+      step.addEventListener("click", () => {
+        step.style.opacity = "0%";
+      });
+    });
+  </script>
 </body>
+
 </html>

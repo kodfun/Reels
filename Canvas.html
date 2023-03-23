@@ -1,0 +1,44 @@
+<!--         GitHub Copilot Eklentisi Aktif         -->
+<h1>JavaScript ile Canvas Üzerinde Çizim (1dk)</h1>
+
+<!-- 900x300 boyutlarında canvas oluştur -->
+<canvas id="myCanvas" width="900" height="300"></canvas>
+
+<script>
+  // canvas elementini getir
+  const c = document.getElementById("myCanvas");
+  
+  // 2d context'i al
+  const ctx = c.getContext("2d");
+
+  // canvas'ın tamamını pembeyle kapla
+  ctx.fillStyle = "pink";
+  ctx.fillRect(0, 0, c.width, c.height);
+
+  // kalın ve kırmızı bir çizgi çiz
+  ctx.lineWidth = 10;
+  ctx.strokeStyle = "red";
+  ctx.beginPath();
+  ctx.moveTo(50, 50);
+  ctx.lineTo(200, 50);
+  ctx.stroke();
+
+  // içi boş mavi bir dikdörtgen çiz
+  ctx.lineWidth = 5;
+  ctx.strokeStyle = "blue";
+  ctx.strokeRect(50, 100, 150, 100);
+
+  // yeşil bir daire çiz
+  ctx.fillStyle = "green";
+  ctx.beginPath();
+  ctx.arc(300, 150, 50, 0, 2 * Math.PI);
+  ctx.fill();
+
+
+  // tam ortaya mor KODFUN yaz
+  ctx.font = "50px Arial";
+  ctx.fillStyle = "purple";
+  ctx.textAlign = "center";
+  ctx.fillText("KODFUN", c.width / 2, c.height / 2);
+
+</script>

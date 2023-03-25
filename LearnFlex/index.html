@@ -1,0 +1,287 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+  href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+  rel="stylesheet">
+
+<div class="container">
+  <h1>TRY & LEARN FLEX</h1>
+  <h2>https://flex.kod.fun</h2>
+
+  <main>
+    <pre class="html" data-title="HTML">
+<i class="gray">&lt;</i><i class="db">div</i> <i class="b">class</i>=<i class="string">"box"</i><i class="gray">&gt;</i>
+  <i class="gray">&lt;</i><i class="db">img</i> <i class="b">src</i>=<i class="string">"coin1.png"</i><i class="gray">&gt;</i>
+  <i class="gray">&lt;</i><i class="db">img</i> <i class="b">src</i>=<i class="string">"coin2.png"</i><i class="gray">&gt;</i>
+  <i class="gray">&lt;</i><i class="db">img</i> <i class="b">src</i>=<i class="string">"coin3.png"</i><i class="gray">&gt;</i>
+<i class="gray">&lt;/</i><i class="db">div</i><i class="gray">&gt;</i></pre>
+
+    <div class="preview" data-title="PREVIEW">
+      <div class="box">
+        <img src="coin1.png">
+        <img src="coin2.png">
+        <img src="coin3.png">
+      </div>
+    </div>
+
+    <!-- <i class="b">background-color</i>: <i class="fonk">rgb</i><i class="p">(</i><i class="digit">85</i>, <i class="digit">160</i>, <i class="digit">136</i><i class="p">)</i>;
+    <i class="b">height</i>: 400px; -->
+
+    <pre class="css" data-title="CSS">
+<i class="o">.box</i> <i class="y">{</i>
+  <i class="b">display</i>: <select id="d"></select>;
+  <i class="b">flex-direction</i>: <select id="fd"></select>;
+  <i class="b">align-items</i>: <select id="ai"></select>;
+  <i class="b">justify-content</i>: <select id="jc"></select>;
+<i class="y">}</i></pre>
+  </main>
+  <footer>
+    <img class="logo" src="logo.png" alt="KodFun Logo">
+  </footer>
+</div>
+
+
+<style>
+  html,
+  body {
+    height: 100%;
+    margin: 0;
+  }
+  
+  body {
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .container {
+    height: 100%;
+    margin: 0 4rem;
+    padding-top: .0001px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  main {
+    margin-top: 2rem;
+  }
+
+  .html,
+  .css,
+  .preview {
+    margin: 2vmax 0
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 700;
+    color: #6d2f17;
+    margin: 4rem 0 .5rem 0;
+  }
+
+  h2 {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #9c5252;
+    margin: 0 0 1rem 0;
+  }
+
+  .box {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    height: 400px;
+  }
+
+  .box>img {
+    z-index: 1;
+  }
+
+  body {
+    background-color: orange;
+  }
+
+  .string {
+    color: #ce9178;
+  }
+
+  .fonk {
+    color: #dcdcaa;
+  }
+
+  .o {
+    color: #d7ba7d;
+  }
+
+  .y {
+    color: #ffd700;
+  }
+
+  .db {
+    color: #569cd6;
+  }
+
+  .b {
+    color: #9cdcfe;
+  }
+
+  .p {
+    color: #da70d6;
+  }
+
+  .digit {
+    color: #b5cea8;
+  }
+
+  .gray {
+    color: #808080;
+  }
+
+  pre {
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+    font-size: 2.3vmin;
+    font: 500 2rem/1.5 'Source Code Pro', monospace;
+    padding: 1.5vmin 3vmin;
+    border-radius: 10px;
+    flex: 81;
+    position: relative;
+  }
+
+  pre i {
+    font-style: normal;
+  }
+
+  pre>select {
+    background-color: #1e1e1e;
+    color: #ce9178;
+    font: 500 2rem/1.5 'Source Code Pro', monospace;
+  }
+
+  .preview {
+    position: relative;
+    border: 10px dashed white;
+    background-color: #35ad45;
+  }
+
+  pre[data-title]::after,
+  .preview[data-title]::after {
+    display: block;
+    position: absolute;
+    content: attr(data-title);
+    color: white;
+    top: 0;
+    right: 0;
+    border: 1px solid white;
+    padding: .1rem 1rem;
+    margin: 1rem;
+    font: 900 1.5rem/1 Consolas, 'Courier New', monospace;
+    padding: .5rem 1rem;
+    z-index: 0;
+  }
+
+  footer {
+    position: relative;
+    margin-top: auto;
+    padding: 1rem 0 3rem 0;
+    text-align: right;
+  }
+
+  .logo {
+    width: 100px;
+    height: 100px;
+  }
+
+  @media screen and (min-width: 1100px) {
+    h1 {
+      margin-top: 3rem;
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .html,
+    .css,
+    .preview {
+      margin: 0;
+    }
+
+    .html {
+      grid-row: 1 / 2;
+    }
+
+    .css {
+      grid-row: 2 / 3;
+    }
+
+    .preview {
+      grid-row: 1 / 3;
+      grid-column: 2 / 2;
+    }
+
+    .box {
+      height: 100%;
+    }
+  }
+</style>
+
+<script>
+  const d = document.getElementById('d');
+  const fd = document.getElementById('fd');
+  const ai = document.getElementById('ai');
+  const jc = document.getElementById('jc');
+
+  const options = ['flex', 'inline', 'block', 'inline-block'];
+  const fdOptions = ['row', 'row-reverse', 'column', 'column-reverse'];
+  const aiOptions = ['flex-start', 'flex-end', 'center', 'baseline', 'stretch'];
+  const jcOptions = ['flex-start', 'flex-end', 'center', 'space-between', 'space-around', 'space-evenly'];
+
+  options.forEach((option) => {
+    const el = document.createElement('option');
+    el.textContent = option;
+    el.value = option;
+    d.appendChild(el);
+  });
+
+  fdOptions.forEach((option) => {
+    const el = document.createElement('option');
+    el.textContent = option;
+    el.value = option;
+    fd.appendChild(el);
+  });
+
+  aiOptions.forEach((option) => {
+    const el = document.createElement('option');
+    el.textContent = option;
+    el.value = option;
+    ai.appendChild(el);
+  });
+
+  jcOptions.forEach((option) => {
+    const el = document.createElement('option');
+    el.textContent = option;
+    el.value = option;
+    jc.appendChild(el);
+  });
+
+  d.addEventListener('change', (e) => {
+    document.querySelector('.box').style.display = e.target.value;
+  });
+
+  fd.addEventListener('change', (e) => {
+    document.querySelector('.box').style.flexDirection = e.target.value;
+  });
+
+  ai.addEventListener('change', (e) => {
+    document.querySelector('.box').style.alignItems = e.target.value;
+  });
+
+  jc.addEventListener('change', (e) => {
+    document.querySelector('.box').style.justifyContent = e.target.value;
+  });
+</script>

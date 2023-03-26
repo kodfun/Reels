@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Media Queries</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <main>
+    <h1>
+      Kod<span class="fun">Fun</span>
+    </h1>
+  </main>
+  <style>
+    .fun {
+      display: none;
+    }
+
+    @media (max-width: 800px) {
+      .fun {
+        display: inline;
+      }
+    }
+  </style>
+
+  <footer>
+    <i class="fa-solid fa-arrow-left"></i>
+    <span>0px</span>
+    <i class="fa-solid fa-arrow-right"></i>
+  </footer>
+
+  <style>
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: 8rem;
+      font-weight: 900;
+    }
+
+    footer {
+      font-size: 5rem;
+      padding: 1rem 0;
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      margin-top: auto;
+      color: #6d41a1;
+      opacity: .7;
+    }
+
+    footer::before {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 10px;
+      background-color: #6d41a1;
+      position: absolute;
+      border-radius: 1rem;
+      top: calc(50% - 11px);
+      z-index: 0;
+    }
+
+    footer>span {
+      z-index: 1;
+      background-color: white;
+      padding: 0 1rem;
+      font-family: 'Courier New', Courier, monospace;
+      font-weight: bold;
+    }
+  </style>
+
+  <script>
+    // on browser width change
+    window.addEventListener("resize", showWidth);
+
+    function showWidth() {
+      // get footer element
+      const footer = document.querySelector("footer");
+      // get span element
+      const span = footer.querySelector("span");
+      // get window width
+      const width = window.innerWidth;
+      // set span text
+      span.innerText = width + "px";
+    }
+
+    showWidth();
+  </script>
+</body>
+
+</html>

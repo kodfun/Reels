@@ -47,11 +47,11 @@
     height: 100%;
     margin: 0;
   }
-  
+
   body {
     font-family: 'Montserrat', sans-serif;
   }
-  
+
   .container {
     height: 100%;
     margin: 0 4rem;
@@ -141,8 +141,6 @@
   pre {
     background-color: #1e1e1e;
     color: #d4d4d4;
-    font-size: 2.3vmin;
-    font: 500 2rem/1.5 'Source Code Pro', monospace;
     padding: 1.5vmin 3vmin;
     border-radius: 10px;
     flex: 81;
@@ -156,6 +154,10 @@
   pre>select {
     background-color: #1e1e1e;
     color: #ce9178;
+  }
+
+  pre,
+  pre>select {
     font: 500 2rem/1.5 'Source Code Pro', monospace;
   }
 
@@ -194,6 +196,12 @@
   }
 
   @media screen and (min-width: 1100px) {
+
+    pre,
+    pre>select {
+      font: 500 1.5vw/1.5 'Source Code Pro', monospace;
+    }
+
     h1 {
       margin-top: 3rem;
     }

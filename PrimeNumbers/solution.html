@@ -1,0 +1,21 @@
+<script>
+  // PRINT PRIME NUMBERS FROM 1 TO 100
+  // 1'DEN 100'E ASAL SAYILARI YAZDIRMA
+  let i, j, isPrime, sqrt;
+
+  for (i = 2; i <= 100; i++) {
+    isPrime = true;
+    sqrt = Math.sqrt(i);
+
+    for (j = 2; j <= sqrt; j++) {
+      if (i % j == 0) {
+        isPrime = false;
+        break;
+      }
+    }
+
+    if (isPrime) {
+      document.write(i + "<br>");
+    }
+  }
+</script>

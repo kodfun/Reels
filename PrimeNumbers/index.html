@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prime Numbers</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+  <style>
+    body {
+      background-color: green;
+      color: white;
+      font-family: 'Inter', sans-serif;
+      font-size: 3vh;
+      font-weight: 700;
+    }
+  </style>
+</head>
+
+<body>
+  <script>
+    let nums = [], x = 0;
+
+    // PRINT PRIME NUMBERS FROM 1 TO 100
+    // 1'DEN 100'E ASAL SAYILARI YAZDIRMA
+    let i, j, isPrime, sqrt;
+    for (i = 2; i <= 100; i++) {
+      isPrime = true;
+      sqrt = Math.sqrt(i);
+
+      for (j = 2; j <= sqrt; j++) {
+        if (i % j == 0) {
+          isPrime = false;
+          break;
+        }
+      }
+
+      if (isPrime) {
+        nums.push(i);
+      }
+    }
+
+    let timerId = setInterval(writeNum, 500);
+
+    function writeNum() {
+      document.body.innerHTML += nums[x] + "<br>";
+      x++;
+      if (x == nums.length) clearInterval(timerId);
+    }
+
+  </script>
+</body>
+
+</html>

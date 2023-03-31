@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Combinators</title>
+  <link rel="shortcut icon" href="logo.png" type="image/png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1>CSS Combinators</h1>
+  <h2 class="demo-link"><span class="trynow">Try It Now</span> on https://combinators.kod.fun</h2>
+  <div class="html-css-preview">
+    <pre class="html" data-title="HTML">
+<i class="gray">&lt;</i><i class="db">main</i><i class="gray">&gt;</i>
+  <span id="p1"><i class="gray">&lt;</i><i class="db">p</i><i class="gray">&gt;</i>Start with a simple language<i class="gray">&lt;/</i><i class="db">p</i><i class="gray">&gt;</i></span>
+  <span id="p2"><i class="gray">&lt;</i><i class="db">p</i><i class="gray">&gt;</i>Write code every day<i class="gray">&lt;/</i><i class="db">p</i><i class="gray">&gt;</i></span>
+  <span id="p3"><i class="gray">&lt;</i><i class="db">p</i> <i class="b">id</i>=<i class="string">"kodfun"</i><i class="gray">&gt;</i>Solve problem<i class="gray">&lt;/</i><i class="db">p</i><i class="gray">&gt;</i></span>
+  <span id="p4"><i class="gray">&lt;</i><i class="db">p</i><i class="gray">&gt;</i>Collaborate and ask for feedback<i class="gray">&lt;/</i><i class="db">p</i><i class="gray">&gt;</i></span>
+  <span id="p5"><i class="gray">&lt;</i><i class="db">p</i><i class="gray">&gt;</i>Never stop learning<i class="gray">&lt;/</i><i class="db">p</i><i class="gray">&gt;</i></span>
+  <i class="gray">&lt;</i><i class="db">div</i><i class="gray">&gt;</i>
+    <span id="p6"><i class="gray">&lt;</i><i class="db">p</i><i class="gray">&gt;</i>Debugging is key<i class="gray">&lt;/</i><i class="db">p</i><i class="gray">&gt;</i></span>
+  <i class="gray">&lt;/</i><i class="db">div</i><i class="gray">&gt;</i>
+<i class="gray">&lt;/</i><i class="db">main</i><i class="gray">&gt;</i></pre>
+
+    <div class="row css-preview">
+      <div class="col1">
+        <h2>Choose a selector:</h2>
+        <div class="options">
+          <label><input type="radio" name="sel">main p</label>
+          <label><input type="radio" name="sel">main > p</label>
+          <label><input type="radio" name="sel">#kodfun + p</label>
+          <label><input type="radio" name="sel">#kodfun ~ p</label>
+        </div>
+        <div class="css-container">
+          <pre class="css css1" data-title="CSS">
+
+
+
+</pre>
+          <pre class="css css2" data-title="CSS">
+<i class="o selector">main p</i> <i class="y">{</i>
+  <i class="b">color</i>: <i class="string">red</i>;
+<i class="y">}</i>
+</pre>
+        </div>
+      </div>
+      <div class="col2">
+        <main data-title="PREVIEW">
+          <p>Start with a simple language</p>
+          <p>Write code every day</p>
+          <p id="kodfun">Solve problem</p>
+          <p>Collaborate and ask for feedback</p>
+          <p>Never stop learning</p>
+          <div>
+            <p>Debugging is key</p>
+          </div>
+        </main>
+      </div>
+    </div>
+  </div>
+
+  <div class="desc">
+    <b>CSS kombinatörleri</b>, bir seçicinin başka bir seçici ile birleştirilmesi ile oluşan bir yapıdır ve farklı
+    seçiciler arasındaki ilişkiyi tanımlar.
+  </div>
+
+  <img src="logo.png" alt="logo" id="logo">
+
+  <script>
+    const options = document.querySelectorAll('.options input');
+    const css = document.querySelector('.selector');
+    const css1 = document.querySelector('.css1');
+    const css2 = document.querySelector('.css2');
+    const main = document.querySelector('main');
+    const preCss = document.querySelector('.css-container>pre');
+    const desc = document.querySelector('.desc');
+    const ps = ["#p1,#p2,#p3,#p4,#p5,#p6", "#p1,#p2,#p3,#p4,#p5", "#p4", "#p4,#p5"];
+    const descs = [
+      "<b>Descendant (alt öğe) combinator (space)</b>: Belirtilen elementin içinde yer alan tüm elementleri seçer.",
+      "<b>Child (çocuk öğe) combinator (>)</b>: Belirtilen elementin doğrudan çocuklarını seçer.",
+      "<b>Adjacent sibling (bitişik kardeş) combinator (+)</b>: Belirtilen elementten hemen sonra gelen kardeşini seçer.",
+      "<b>General sibling (genel kardeş) combinator (~)</b>: Belirtilen elementten sonra gelen tüm kardeşlerini seçer."
+    ];
+
+    options.forEach((option, i) => {
+      option.addEventListener('change', (e) => {
+        desc.innerHTML = descs[i];
+        document.querySelectorAll(ps[0]).forEach((el) => { el.className = ""; });
+        document.querySelectorAll(ps[i]).forEach((el) => { el.className = "highlight"; });
+      });
+    });
+
+    options.forEach((option) => {
+      option.addEventListener('change', (e) => {
+        resetOptions();
+        e.target.parentElement.className = "active";
+        css1.style.display = 'none';
+        css2.style.display = 'block';
+        const selector = e.target.parentElement.innerText;
+        css.innerText = selector;
+        main.querySelectorAll('*').forEach((el) => {
+          el.style.color = 'black';
+        });
+        main.querySelectorAll(selector).forEach((el) => {
+          el.style.color = 'red';
+        });
+      });
+    });
+
+    function resetOptions() {
+      document.querySelectorAll(".options>label").forEach((el) => {
+        el.classList.remove("active");
+      });
+    }
+  </script>
+</body>
+
+</html>

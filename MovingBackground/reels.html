@@ -1,0 +1,307 @@
+<!-- https://www.cssscript.com/pure-css-css3-slideshow-with-image-panning-and-zooming-effect/ -->
+<!-- <div class="pic-wrapper">
+  <figure class="pic-1"></figure>
+  <figure class="pic-2"></figure>
+  <figure class="pic-3"></figure>
+  <figure class="pic-4"></figure>
+</div> -->
+<img src="../logo.png" alt="logo" id="logo">
+
+<main>
+  <div id="title">
+    MOVING BACKGROUND <br>CSS TEXT ANIMATION
+  </div>
+  <div id="url">
+    https://codepen.io/kodfun/pen/YzJPrZV
+  </div>
+  <div id="preview">
+    <h1>CAPPADOCIA</h1>
+  </div>
+  <div id="code">
+    <img src="img/code.png" alt="code">
+  </div>
+</main>
+
+<style>
+  #logo {
+    position: absolute;
+    right: 3rem;
+    bottom: 3rem;
+    width: 200px;
+    height: 200px;
+    z-index: 999;
+  }
+
+  body {
+    font-family: "Montserrat", sans-serif;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  #code {
+    position: relative;
+    width: 800px;
+    margin: 0 auto;
+    border-radius: 1rem;
+    padding: 1rem;
+    background-color: #1e1e1e;
+  }
+
+  #code::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    content: "HTML & CSS";
+    color: white;
+    z-index: 1000;
+    display: block;
+    background-color: #c94d37;
+    margin: 1rem;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 0 .5rem;
+  }
+
+  #code>img {
+    width: 95%;
+  }
+
+  main {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1080px;
+    height: 1920px;
+    z-index: 99;
+    background-image: url(img/5.jpg);
+    ;
+    background-size: cover;
+  }
+
+  #preview {
+    margin: 1rem auto;
+    width: 800px;
+    height: 440px;
+    background: url(img/browser.png) no-repeat;
+    background-size: contain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #title {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 4rem auto 2rem;
+    background: linear-gradient(90deg, #804014, #884123, #bc7933, #bc7933);
+    color: #ece3c2;
+    padding: 1rem;
+    width: 800px;
+    border-radius: 1rem;
+  }
+
+  #url {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    margin: .5rem auto 2rem;
+    background: #1e1e1e;
+    color: #ece3c2;
+    padding: .5rem;
+    width: 800px;
+  }
+
+  .pic-wrapper {
+    position: absolute;
+    width: 1080px;
+    height: 1920px;
+    overflow: hidden;
+  }
+
+  figure {
+    filter: blur(5px) brightness(0.8);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    /*animation*/
+
+    animation: slideShow 24s linear infinite 0s;
+    -o-animation: slideShow 24s linear infinite 0s;
+    -moz-animation: slideShow 24s linear infinite 0s;
+    -webkit-animation: slideShow 24s linear infinite 0s;
+  }
+
+  .pic-1 {
+    opacity: 1;
+    background: url(img/3.jpg) no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+  .pic-2 {
+    animation-delay: 6s;
+    -o-animation-delay: 6s;
+    -moz--animation-delay: 6s;
+    -webkit-animation-delay: 6s;
+    background: url(img/4.jpg) no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+  .pic-3 {
+    animation-delay: 12s;
+    -o-animation-delay: 12s;
+    -moz--animation-delay: 12s;
+    -webkit-animation-delay: 12s;
+    background: url(img/11.jpg) no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+  .pic-4 {
+    animation-delay: 18s;
+    -o-animation-delay: 18s;
+    -moz--animation-delay: 18s;
+    -webkit-animation-delay: 18s;
+    background: url(img/2.jpg) no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+  @keyframes slideShow {
+    0% {
+      opacity: 0;
+      transform: scale(1);
+      -ms-transform: scale(1);
+    }
+
+    5% {
+      opacity: 1
+    }
+
+    25% {
+      opacity: 1;
+    }
+
+    30% {
+      opacity: 0;
+      transform: scale(1.1);
+      -ms-transform: scale(1.1);
+    }
+
+    100% {
+      opacity: 0;
+      transform: scale(1);
+      -ms-transformm: scale(1);
+    }
+  }
+
+  @-o-keyframes slideShow {
+    0% {
+      opacity: 0;
+      -o-transform: scale(1);
+    }
+
+    5% {
+      opacity: 1
+    }
+
+    25% {
+      opacity: 1;
+    }
+
+    30% {
+      opacity: 0;
+      -o-transform: scale(1.1);
+    }
+
+    100% {
+      opacity: 0;
+      -o-transformm: scale(1);
+    }
+  }
+
+  @-moz-keyframes slideShow {
+    0% {
+      opacity: 0;
+      -moz-transform: scale(1);
+    }
+
+    5% {
+      opacity: 1
+    }
+
+    25% {
+      opacity: 1;
+    }
+
+    30% {
+      opacity: 0;
+      -moz-transform: scale(1.1);
+    }
+
+    100% {
+      opacity: 0;
+      -moz-transformm: scale(1);
+    }
+  }
+
+  @-webkit-keyframes slideShow {
+    0% {
+      opacity: 0;
+      -webkit-transform: scale(1);
+    }
+
+    5% {
+      opacity: 1
+    }
+
+    25% {
+      opacity: 1;
+    }
+
+    30% {
+      opacity: 0;
+      -webkit-transform: scale(1.1);
+    }
+
+    100% {
+      opacity: 0;
+      -webkit-transformm: scale(1);
+    }
+  }
+</style>
+
+<style>
+  h1 {
+    display: inline-flex;
+    font-family: "Impact", sans-serif;
+    background: url("balloons.jpg");
+    font-size: 8rem;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: #5b728a54;
+    animation: move 30s linear infinite;
+    letter-spacing: .3rem;
+  }
+  @keyframes move {
+    from { background-position: 0 80%; }
+    to { background-position: 100% 50%; }
+  }
+</style>

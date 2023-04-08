@@ -1,0 +1,29 @@
+<div class="kodfun">
+  <span style="--x:1">K</span>
+  <span style="--x:2">O</span>
+  <span style="--x:3">D</span>
+  <span style="--x:4">F</span>
+  <span style="--x:5">U</span>
+  <span style="--x:6">N</span>
+</div>
+
+<style>
+  body {
+    font-size: 20vw;
+    text-align: center;
+  }
+
+  .kodfun {
+    display: flex;
+    justify-content: center;
+  }
+
+  .kodfun>span {
+    display: inline-block;
+    animation: flip 2s infinite;
+    animation-delay: calc(0.2s * var(--x));
+  }
+  @keyframes flip { 
+    0%, 80% { transform: rotateY(360deg); }
+  }
+</style>

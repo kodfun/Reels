@@ -1,27 +1,32 @@
-<svg width="900" height="600" 
-  viewBox="0 -30000 90000 60000">
+<svg viewBox="0 -300 900 600">
+  <style>
+    .text { font: 900 150px Impact, sans-serif; }
+  </style>
   <defs>
-    <clipPath id="MoonStar">
-      <text x="20000" y="-20000" class="text">TURKIYE</text>
-      <path
-        d="m41750 0 13568-4408-8386 11541V-7133l8386 
-           11541zm925 8021a15000 15000 0 1 1 0-16042 
-           12000 12000 0 1 0 0 16042z" />
+    <clipPath id="mask">
+      <text class="text" x="600" y="-120">TUR</text>
+      <text class="text" x="600" y="60">KI</text>
+      <text class="text" x="600" y="240">YE</text>
+      <path d="M0 0 v300 h400 M0 100 M0 -300 h800 L0 -120 
+        M900 300 v-600 l-150 600 M320 300 h320 l-160 -160" />
+      <path d="m418 0 136-44-84 115V-71l84 115zm9 80a150 150 
+        0 1 1 0-160 120 120 0 1 0 0 160z" />
     </clipPath>
   </defs>
-    <image href="turkey.gif"  x="0" y="-30000" width="90000" height="60000" clip-path="url(#MoonStar)">
+  <image href="turkey.gif" clip-path="url(#mask)" 
+    x="0" y="-300" width="900" height="600" />
 </svg>
 
+
 <style>
-  .text {
-    font-family: Impact, sans-serif;
-    font-size: 9000px;
-    text-align: center;
-  }
+  /* FOR DEMO PURPOSES */
   body {
-    background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  svg {
+    max-width: 900px;
   }
 </style>

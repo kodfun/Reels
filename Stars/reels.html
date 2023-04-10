@@ -1,6 +1,8 @@
 <main>
   <div class="container">
-    <h1>Star Patterns in JavaScript</h1>
+    <h1>Star Patterns in JavaScript<br>
+      <small>&ldquo;One &#171;Nested For Loops&#187; To Rule Them All&rdquo;</small>
+    </h1>
     <div class="conditions">
       <select id="conditions"></select>
     </div>
@@ -22,9 +24,12 @@
       </div>
     </div>
   </div>
+  <img src="logo.png" alt="logo" id="logo">
 </main>
 
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
   html,
   body {
     margin: 0;
@@ -42,6 +47,15 @@
   main {
     background-color: rgb(104, 104, 233);
     height: 100%;
+    position: relative;
+  }
+
+  #logo {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 8vh;
+    margin: 2vh;
   }
 
   *,
@@ -59,39 +73,42 @@
   .code {
     position: relative;
     background-color: #1e1e1e;
-    padding: 1rem;
-    border-radius: 1rem;
+    padding: 1.7vh;
+    border-radius: 1vh;
   }
 
   img {
     width: 100%;
   }
 
+  .conditions {
+    margin-bottom: 1vh;
+  }
+
   #n,
   #condition {
     position: absolute;
     top: 46%;
-    left: 21%;
-    background-color: rgb(149, 255, 78);
-    color: black;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 1.5vh;
-    padding: .1vh;
-    font-weight: 900;
+    left: 21.8%;
+    background-color: rgb(170, 255, 113);
+    color: rgb(10, 24, 1);
+    font-family: 'Source Code Pro', monospace;
+    font-size: 1.4vh;
+    padding: .05vh .5vh;
+    font-weight: 700;
     border-radius: .5vh;
   }
 
   #n {
     top: 19%;
     left: 25%;
-    padding: .1vh .5vh;
   }
 
   .lines {
-    width: 100%;
     display: flex;
-    align-items: baseline;
+    align-items: center;
     justify-content: center;
+    margin-bottom: 1vh;
   }
 
   .lines>label {
@@ -145,7 +162,6 @@
     width: 100%;
     height: 13px;
     cursor: pointer;
-    animate: 0.2s;
     box-shadow: 0px 0px 0px #000000;
     background: #AC51B5;
     border-radius: 25px;
@@ -209,13 +225,14 @@
     height: 25vh;
     background: url(browser.png) no-repeat center center;
     background-size: contain;
-    margin-bottom: 2vh;
+    margin-bottom: 1.5vh;
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
   .preview>pre {
+    font-family: 'Source Code Pro', monospace;
     background: #eee;
     width: 20vh;
     height: 20vh;
@@ -223,7 +240,7 @@
     font-size: 2.1vh;
     letter-spacing: .9vh;
     line-height: 1;
-    padding: 1vh;
+    padding: .5vh;
   }
 
   select {
@@ -235,24 +252,38 @@
     background-color: #1e1e1e;
     color: white;
     padding: 0 1vh;
-    margin-bottom: 2vh;
     text-align: center;
     outline: none;
+  }
+
+  select {
+    appearance: none;
+    background: url("data:image/svg+xml;utf8,<svg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>") #1e1e1e no-repeat calc(100% - 1vh) !important;
+    /* Better placement regardless of input width */
   }
 
   h1 {
     font-size: 2.5vh;
     text-align: center;
-    margin-bottom: 2vh;
+    margin-bottom: 1.5vh;
     text-transform: uppercase;
     background-color: #1e1e1e;
     color: white;
-    margin-top: 5vh;
+    margin-top: 4vh;
     padding: 1vh;
   }
 
+  h1>small {
+    font-style: italic;
+    text-transform: capitalize;
+    margin-top: .5vh;
+    display: inline-block;
+    font-size: .75em;
+    font-weight: 500;
+  }
+
   .source-container {
-    margin-top: 2vh;
+    margin-top: 1vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -311,7 +342,7 @@
   };
 
   // for testing
-  conditions.children[1].selected = true;
+  conditions.children[0].selected = true;
   conditions.dispatchEvent(new Event("change"));
   line.dispatchEvent(new Event("oninput"));
 

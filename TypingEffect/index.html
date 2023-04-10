@@ -1,0 +1,40 @@
+<span id="kodfun"></span>
+
+<script>
+  const kodfun = document.getElementById("kodfun");
+  let lines = [
+    "Wake up, Neo...", "The Matrix has you...",
+    "Follow KodFun on Instagram.", "Knock, knock, Neo.",
+  ];
+  let i = 0, j = 0, wait = 6;
+  setInterval(() => {
+    if (wait-- > 0) return;
+    if (wait == -1) kodfun.innerHTML = "";
+    if (i < lines.length) 
+      if (j < lines[i].length)
+        kodfun.innerHTML += lines[i][j++];
+      else 
+        wait = 8, j = 0, i++; 
+    else 
+      wait = 8, i = j = 0;
+  }, 200);
+</script>
+
+<style>
+  body {
+    background-color: #000;
+  }
+  #kodfun {
+    font: 500 4rem monospace;
+    background-color: black;
+    color: #86c8a8;
+    text-shadow: .01em .01em .2em #86c8a8;
+  }
+  #kodfun::after {
+    content: "|";
+    animation: blink 1s step-end infinite;
+  }
+  @keyframes blink {
+    50% { opacity: 0; }
+  }
+</style>

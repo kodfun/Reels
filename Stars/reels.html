@@ -1,0 +1,307 @@
+<main>
+  <div class="container">
+    <h1>Star Patterns in JavaScript</h1>
+    <div class="conditions">
+      <select id="conditions"></select>
+    </div>
+    <div class="lines">
+      <label for="line">n:</label>
+      <input type="range" id="line" min="1" max="9" value="9">
+    </div>
+    <div class="preview">
+      <pre></pre>
+    </div>
+    <div class="code">
+      <img src="code.png" alt="code">
+      <div id="condition">false</div>
+      <div id="n">9</div>
+    </div>
+  </div>
+</main>
+
+<style>
+  html,
+  body {
+    margin: 0;
+    height: 100vh;
+    width: 56.25vh;
+    margin: 0 auto;
+  }
+
+  body,
+  select {
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  main {
+    background-color: rgb(104, 104, 233);
+    height: 100%;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  .container {
+    width: 80%;
+    margin: 0 auto;
+    padding-top: .01vh;
+  }
+
+  .code {
+    position: relative;
+    background-color: #1e1e1e;
+    padding: 1rem;
+    border-radius: 1rem;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  #n, #condition {
+    position: absolute;
+    top: 46%;
+    left: 21%;
+    background-color: rgb(149, 255, 78);
+    color: black;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.5vh;
+    padding: .1vh;
+    font-weight: 900;
+    border-radius: .5vh;
+  }
+
+  #n {
+    top: 19%;
+    left: 25%;
+    padding: .1vh .5vh;
+  }
+
+  .lines {
+    width: 100%;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+  }
+
+  .lines>label {
+    width: 10%;
+    text-align: center;
+    font-size: 3vh;
+    margin-right: 1vh;
+    background-color: #1e1e1e;
+    color: white;
+  }
+
+  input[type=range] {
+    height: 26px;
+    -webkit-appearance: none;
+    background-color: transparent;
+    margin: 10px 0;
+    width: 100%;
+  }
+
+  input[type=range]:focus {
+    outline: none;
+  }
+
+  input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 13px;
+    cursor: pointer;
+    box-shadow: 0px 0px 0px #000000;
+    background: #AC51B5;
+    border-radius: 25px;
+    border: 0px solid #000101;
+  }
+
+  input[type=range]::-webkit-slider-thumb {
+    box-shadow: 0px 0px 0px #000000;
+    border: 0px solid #000000;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background: #65001C;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -9px;
+  }
+
+  input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #AC51B5;
+  }
+
+  input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 13px;
+    cursor: pointer;
+    animate: 0.2s;
+    box-shadow: 0px 0px 0px #000000;
+    background: #AC51B5;
+    border-radius: 25px;
+    border: 0px solid #000101;
+  }
+
+  input[type=range]::-moz-range-thumb {
+    box-shadow: 0px 0px 0px #000000;
+    border: 0px solid #000000;
+    height: 20px;
+    width: 39px;
+    border-radius: 7px;
+    background: #65001C;
+    cursor: pointer;
+  }
+
+  input[type=range]::-ms-track {
+    width: 100%;
+    height: 13px;
+    cursor: pointer;
+    animate: 0.2s;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+  }
+
+  input[type=range]::-ms-fill-lower {
+    background: #AC51B5;
+    border: 0px solid #000101;
+    border-radius: 50px;
+    box-shadow: 0px 0px 0px #000000;
+  }
+
+  input[type=range]::-ms-fill-upper {
+    background: #AC51B5;
+    border: 0px solid #000101;
+    border-radius: 50px;
+    box-shadow: 0px 0px 0px #000000;
+  }
+
+  input[type=range]::-ms-thumb {
+    margin-top: 1px;
+    box-shadow: 0px 0px 0px #000000;
+    border: 0px solid #000000;
+    height: 20px;
+    width: 39px;
+    border-radius: 7px;
+    background: #65001C;
+    cursor: pointer;
+  }
+
+  input[type=range]:focus::-ms-fill-lower {
+    background: #AC51B5;
+  }
+
+  input[type=range]:focus::-ms-fill-upper {
+    background: #AC51B5;
+  }
+
+
+  .preview {
+    height: 25vh;
+    background: url(browser.png) no-repeat center center;
+    background-size: contain;
+    margin-bottom: 2vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .preview>pre {
+    background: #eee;
+    width: 20vh;
+    height: 20vh;
+    margin-top: 5vh;
+    font-size: 2.1vh;
+    letter-spacing: .9vh;
+    line-height: 1;
+    padding: 1vh;
+  }
+
+  select {
+    width: 100%;
+    height: 4vh;
+    font-size: 2vh;
+    border: none;
+    border-radius: .5vh;
+    background-color: #eee;
+    padding: 0 1vh;
+    margin-bottom: 2vh;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 2.5vh;
+    text-align: center;
+    margin-bottom: 2vh;
+    text-transform: uppercase;
+    background-color: #1e1e1e;
+    color: white;
+    margin-top: 5vh;
+    padding: 1vh;
+  }
+</style>
+
+<script>
+  const options = [
+    { "CONDITION (KOŞUL)": "false" },
+    { "SQUARE (KARE)": "true" },
+    { "HORIZONTAL LINE (YATAY ÇİZGİ)": "i == 0" },
+    { "VERTICAL LINE (DİKEY ÇİZGİ)": "j == 0" },
+    { "DIAGONALS (KÖŞEGENLER)": "i == j || i + j == n - 1" },
+    { "HOLLOW SQUARE (İÇİ BOŞ KARE)": "i * j == 0 || i == n - 1 || j == n - 1" },
+    { "TRIANGLE (ÜÇGEN)": "i >= j" },
+    { "INVERTED TRIANGLE (TERS ÜÇGEN)": "i <= j" },
+    { "PYRAMID (PİRAMİT)": "i + j >= n - 1 && i >= j" }
+  ];
+
+  let n = 9;
+  const conditions = document.getElementById("conditions");
+  const condition = document.getElementById("condition");
+  const line = document.getElementById("line");
+  const codeN = document.getElementById("n");
+
+  options.forEach(x => {
+    const key = Object.keys(x)[0];
+    const value = x[key];
+    const option = document.createElement("option");
+    option.value = value;
+    option.text = key;
+    conditions.appendChild(option);
+  });
+
+  conditions.onchange = (e) => {
+    const value = e.target.value;
+    condition.innerHTML = value;
+    drawShape(value);
+  };
+
+  line.oninput = (e) => {
+    const value = e.target.value;
+    n = value;
+    codeN.innerHTML = value;
+    drawShape(conditions.value);
+  };
+
+  // for testing
+  conditions.children[1].selected = true;
+  conditions.dispatchEvent(new Event("change"));
+  line.dispatchEvent(new Event("oninput"));
+
+  function drawShape(con) {
+    let res = "";
+    for (let i = 0; i < n; i++) {
+      for (let j = 0; j < n; j++) {
+        res += (
+          eval(con)
+            ? "*" : " "
+        );
+      }
+      res += "\n";
+    }
+
+    document.querySelector(".preview>pre").innerHTML = res;
+  }
+</script>

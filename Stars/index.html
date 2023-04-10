@@ -1,0 +1,43 @@
+<pre><script>
+  let n = 10;
+  for (let i = 0; i < n; i++) {
+    for (let j = 0; j < n; j++) {
+      document.write(
+        j <= i
+          ? "*" : " "
+      );
+    }
+    document.writeln();
+  }
+</script></pre>
+
+<style>
+  pre {
+    line-height: .7;
+    font-size: 4rem;
+  }
+</style>
+
+<!-- 
+  SQUARE (KARE)
+  true
+
+  YATAY ÇİZGİ
+  i == 0
+
+  DİKEY ÇİZGİ
+  j == 0
+
+  ÜÇGEN
+  i >= j
+
+  KÖŞEGEN
+  i == j
+
+  ÇARPI
+  i == j || i + j == n - 1 
+
+  BOŞ KARE
+  i * j == 0 || i == n - 1 || j == n - 1
+
+ -->

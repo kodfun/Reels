@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Image Preview</title>
+</head>
+
+<body>
+
+  <div>
+    <img id="img" src="choose.png" height="500">
+  </div>
+
+  <input id="input" type="file">
+
+  <script>
+    let img = document.getElementById('img');
+    let input = document.getElementById('input');
+
+    input.onchange = (e) => {
+      if (input.files[0])
+        img.src = URL.createObjectURL(input.files[0]);
+    };
+  </script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    input {
+      font-size: 1.5rem;
+      text-align: center;
+      padding: 1rem;
+      background-color: #c4cddf;
+      border-radius: 1rem;
+      font-family: 'Open Sans', sans-serif;
+      margin-top: 1rem;;
+    }
+  </style>
+</body>
+
+</html>

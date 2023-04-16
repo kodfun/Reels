@@ -1,4 +1,6 @@
-<textarea id="txt" cols="30" rows="10"></textarea><br>
+<!-- https://codepen.io/kodfun/pen/RweazKo -->
+<h2>Text To Speech</h2>
+<textarea id="txt" cols="30" rows="5"></textarea>
 <button id="btn">Speak</button>
 
 <script>
@@ -8,7 +10,7 @@
   btn.addEventListener("click", function(){
     let text = txt.value;
     let utterance = new SpeechSynthesisUtterance(text);
-    //utterance.lang = "tr";
+    utterance.lang = "tr";
     speechSynthesis.speak(utterance);
   });
 </script>

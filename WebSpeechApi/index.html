@@ -1,0 +1,14 @@
+<textarea id="txt" cols="30" rows="10"></textarea><br>
+<button id="btn">Speak</button>
+
+<script>
+  let txt = document.getElementById("txt");
+  let btn = document.getElementById("btn");
+
+  btn.addEventListener("click", function(){
+    let text = txt.value;
+    let utterance = new SpeechSynthesisUtterance(text);
+    //utterance.lang = "tr";
+    speechSynthesis.speak(utterance);
+  });
+</script>

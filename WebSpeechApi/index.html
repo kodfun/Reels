@@ -1,16 +1,17 @@
 <!-- https://codepen.io/kodfun/pen/RweazKo -->
 <h2>Text To Speech</h2>
-<textarea id="txt" cols="30" rows="5"></textarea>
+<textarea id="txt" cols="30" rows="5"></textarea><br>
 <button id="btn">Speak</button>
 
 <script>
   let txt = document.getElementById("txt");
   let btn = document.getElementById("btn");
 
-  btn.addEventListener("click", function(){
+  btn.addEventListener("click", function () {
     let text = txt.value;
     let utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = "tr";
+    // utterance.lang = "tr";
+    // utterance.voice = speechSynthesis.getVoices()[0];
     speechSynthesis.speak(utterance);
   });
 </script>

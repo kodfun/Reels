@@ -1,0 +1,40 @@
+<link rel="stylesheet" 
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+<link rel="stylesheet" 
+  href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css" />
+
+<button class="btn btn-primary position-relative">
+  <i class="ring fa-solid fa-bell"></i>
+  <span class="position-absolute top-0 start-100 
+  translate-middle badge rounded-pill bg-danger">
+    7
+  </span>
+</button>
+
+<style>
+  .ring { animation: ring 1s infinite; }
+
+  @keyframes ring {
+     0% { transform: rotate(  0deg); }
+    10% { transform: rotate( 10deg); }
+    30% { transform: rotate(-10deg); }
+    45% { transform: rotate(  5deg); }
+    55% { transform: rotate( -5deg); }
+    60% { transform: rotate(  0deg); }
+  }
+</style>
+
+<style>
+  /* FOR DEMO PURPOSES */
+  html {
+    font-size: 160px;
+    height: 100%;
+  }
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+</style>

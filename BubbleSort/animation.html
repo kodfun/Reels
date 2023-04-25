@@ -1,0 +1,71 @@
+<style>
+  * {
+    box-sizing: border-box;
+  }
+  #nums {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+  }
+
+  .num {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+    margin: 0 5px;
+  }
+</style>
+
+<div id="nums"></div>
+<button onclick="swap(1,2)">swap</button>
+
+<script>
+  let nums = document.getElementById("nums");
+  let arr = [5, 3, 8, 2, 1, 4];
+
+  for (let i in arr) {
+    i = parseInt(i);
+    const item = arr[i];
+    let div = document.createElement("div");
+    div.tx = 0;
+    div.i = i;
+    div.classList.add("num");
+    div.textContent = item;
+    nums.appendChild(div);
+  }
+
+  function swap(i, j) {
+    let b1 = el(i);
+    let b2 = el(j);
+    move(b1, 60);
+    move(b2, -60);
+  }
+
+  function move(el, x) {
+
+    el.animate([
+      { transform: 'translateX(' + el.tx + 'px)' },
+      { transform: 'translateX(' + (el.tx + x) + 'px)' }
+    ], {
+      duration: 1000,
+      iterations: 1,
+      fill: 'forwards'
+    });
+
+    el.tx += x;
+    el.i += Math.sign(x);
+  }
+
+  function el(i) {
+    for (const div of nums.children) {
+      if (div.i == i)
+        return div;
+    }
+    return null;
+  }
+</script>

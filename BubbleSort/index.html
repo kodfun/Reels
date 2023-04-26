@@ -1,0 +1,33 @@
+<script>
+
+  function bubbleSort(array) {
+
+    let i, j, len = array.length, temp;
+
+    for (i = 0; i < len; i++) {
+
+      let swapped = false;
+
+      for (j = 0; j < len - i - 1; j++) {
+
+        if (array[j] > array[j + 1]) {
+          temp = array[j];
+          array[j] = array[j + 1];
+          array[j + 1] = temp;
+          swapped = true;
+        }
+      }
+
+      if (!swapped) break;
+    }
+    
+  }
+
+  let arr = [5, 3, 8, 2, 1, 4];
+
+  bubbleSort(arr);
+
+  console.log(arr);
+
+  document.write(arr);
+</script>

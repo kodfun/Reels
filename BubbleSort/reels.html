@@ -1,0 +1,311 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+  integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+  :root {
+    --active: #0f9c3e;
+  }
+
+  html,
+  body {
+    margin: 0;
+  }
+
+  body {
+    font-family: 'Kanit', sans-serif;
+    background-color: black;
+  }
+
+  video {
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  #numsContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+  }
+
+  #nums {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 80vw;
+    position: relative;
+    background-color: rgba(255, 255, 255, .5);
+    padding: 6rem 3rem 3rem;
+  }
+
+  .num {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 6rem;
+    height: 6rem;
+    border: 2px solid black;
+    margin: 1rem;
+    font-size: 3rem;
+    font-weight: 500;
+    transition: all 1s;
+  }
+
+  .num.done {
+    background-color: var(--active);
+    color: white;
+  }
+
+  .selection-box {
+    display: none;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 14rem;
+    height: 6rem;
+    border: .25rem solid var(--active);
+    transform: translate(-1px, -1px) scale(1.15, 1.3);
+  }
+
+  .selection-box::after {
+    content: "\f063";
+    font-weight: 900;
+    font-family: "Font Awesome 5 Free";
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: var(--active);
+    transform: translate(6rem, -3rem) scale(2);
+  }
+
+  h1 {
+    color: white;
+    font-size: 4rem;
+    text-align: center;
+    margin-top: 8rem;
+    margin-bottom: 0;
+  }
+
+  h2 {
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 1rem;
+    font-weight: 400;
+  }
+
+  h1,
+  h2 {
+    opacity: .9;
+    text-shadow: 0 0 .11rem black;
+  }
+
+  .code-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+    width: 70vw;
+    margin: 2rem auto 0;
+  }
+
+  .code-container img {
+    width: 100%;
+    height: auto;
+    background-color: rgba(0, 0, 0, .75);
+  }
+
+  #logo {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 10rem;
+    height: auto;
+    margin: 2rem;
+  }
+
+  .source-code {
+    margin-top: 1rem;
+    text-align: center;
+  }
+
+  .source-code span {
+    font-size: 1.5rem;
+    color: #11629b;
+    background-color: rgba(255, 255, 255, .5);
+    padding: .1rem 1rem;
+    
+  }
+</style>
+
+<video src="bubbles.mov"></video>
+<h1>Bubble Sort Algorithm</h1>
+<h2>“The biggest number rises to the top like a bubble.”</h2>
+<div id="numsContainer">
+  <div id="nums"></div>
+</div>
+
+<div class="code-container">
+  <img src="code.png" alt="code">
+</div>
+
+<div class="source-code">
+  <span>
+    https://codepen.io/kodfun/pen/YzJVdbX
+  </span>
+</div>
+
+<img src="../logo.png" alt="logo" id="logo">
+
+<script>
+  let nums = document.getElementById("nums");
+  let arr = [5, 3, 8, 2, 1, 4];
+  let selectionBox = document.createElement("span");
+  let interval = 1200;
+  const video = document.querySelector("video");
+  selectionBox.classList.add("selection-box");
+
+  for (let i in arr) {
+    i = parseInt(i);
+    const item = arr[i];
+    let div = document.createElement("div");
+    div.tx = 0;
+    div.i = i;
+    div.classList.add("num");
+    div.textContent = item;
+    nums.appendChild(div);
+  }
+
+  nums.appendChild(selectionBox)
+
+  el(0).classList.add("active");
+
+  function swap(i, j) {
+    let b1 = el(i);
+    let b2 = el(j);
+    move(b1, 8);
+    move(b2, -8);
+  }
+
+  function move(el, x) {
+
+    el.animate([
+      { transform: 'translateX(' + el.tx + 'rem)' },
+      { transform: 'translateX(' + (el.tx + x) + 'rem)' }
+    ], {
+      duration: interval / 2,
+      iterations: 1,
+      fill: 'forwards'
+    });
+
+    el.tx += x;
+    el.i += Math.sign(x);
+  }
+
+  function el(i) {
+    for (const div of nums.children) {
+      if (div.i == i)
+        return div;
+    }
+    return null;
+  }
+
+  function clearActiveClasses() {
+    for (const div of nums.children) {
+      div.classList.remove("active");
+    }
+  }
+
+  function setSelected(el) {
+    selectionBox.style.left = "calc(" + el.tx + "rem + " + el.offsetLeft + "px)";
+    selectionBox.style.top = el.offsetTop + "px";
+    console.log(el);
+  }
+
+  function showSelectionBox() {
+    selectionBox.style.display = "block";
+  }
+
+  function hideSelectionBox() {
+    selectionBox.style.display = "none";
+  }
+
+  function setAllDone() {
+    for (const div of nums.children) {
+      div.classList.add("done");
+    }
+  }
+
+  let i = 0, j = 0, bigger, swapped = false, timerId;
+
+  function startAnimation() {
+    let timerId = setInterval(() => {
+
+      if (j >= arr.length - i - 1) {
+        bigger.classList.add("done");
+        j = 0;
+        i++;
+        swapped = false;
+      }
+
+      clearActiveClasses();
+      let b1 = el(j);
+      let b2 = el(j + 1);
+      let n1 = Number(b1.textContent);
+      let n2 = Number(b2.textContent);
+
+      setSelected(b1);
+      showSelectionBox();
+
+      if (n1 > n2) {
+        bigger = b1;
+        swap(j, j + 1);
+        swapped = true;
+      }
+      else {
+        bigger = b2;
+      }
+
+      if (i >= arr.length) {
+        clearInterval(timerId);
+        return;
+      }
+
+      if (j == arr.length - i - 2 && !swapped) {
+        clearInterval(timerId);
+        setTimeout(() => {
+          hideSelectionBox();
+          setAllDone();
+        }, interval);
+        return;
+      }
+
+      j++;
+    }, interval);
+  }
+
+  document.onclick = () => {
+    setTimeout(() => {
+      startAnimation();
+      video.play();
+    }, 500);
+  }
+</script>

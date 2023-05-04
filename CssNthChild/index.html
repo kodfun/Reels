@@ -1,0 +1,223 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+</style>
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  :root {
+    --c1: #fdc842;
+    --c2: #f59025;
+    --c3: #db5055;
+    --c4: #3115a0;
+    --c5: #c963a0;
+    --light: #ecf0f1;
+    --white: #fff;
+  }
+  :root {
+  --c1: #f9c74f;
+  --c2: #43aa8b;
+  --c3: #ff6b6b;
+  --c4: #9b5de5;
+  --c5: #3b3e6e;
+  --light: #ecf0f1;
+  --white: #fff;
+}
+:root {
+  --c1: #fd5f00;
+  --c2: #c82c00;
+  --c3: #d7b0ff;
+  --c4: #4d4d4d;
+  --c5: #7f58af;
+  --light: #ecf0f1;
+  --white: #fff;
+}
+:root {
+  --c1: #ffc300;
+  --c2: #ff8b00;
+  --c3: #ff4136;
+  --c4: #ff7260;
+  --c5: #f9c5d1;
+  --light: #ecf0f1;
+  --white: #fff;
+}
+:root {
+  --c1: #fceade;
+  --c2: #ffd6ba;
+  --c3: #d5c6e0;
+  --c4: #b2dbd5;
+  --c5: #f0a0a8;
+  --light: #ecf0f1;
+  --white: #fff;
+}
+:root {
+  --c1: #5cb4db;
+  --c2: #4d4d4d;
+  --c3: #94d0cc;
+  --c4: #f9cb40;
+  --c5: #d94e67;
+  --light: #ecf0f1;
+  --white: #fff;
+}
+
+
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    font-size: 15px;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--c1);
+    color: var(--c2);
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  header {
+    margin-top: 4rem;
+  }
+
+  header>h1 {
+    font-size: 7rem;
+    margin-bottom: 1rem;
+    color: var(--c5);
+    text-align: center;
+  }
+
+  main {
+    margin-top: 1rem;
+    width: 100%;
+  }
+
+  div[class^="exa"] {
+    cursor: pointer;
+    background-color: var(--white);
+    padding: .5rem;
+  }
+
+  div.exa0:hover>i:nth-child(1),
+  div.exa1:hover>i:nth-child(odd),
+  div.exa2:hover>i:nth-child(even),
+  div.exa3:hover>i:nth-child(3n),
+  div.exa4:hover>i:nth-child(n+4),
+  div.exa5:hover>i:nth-last-child(-n+2),
+  div.exa6:hover>i:nth-child(n+3):nth-child(-n+6) {
+    background-color: var(--c2);
+    color: var(--light);
+  }
+
+  div>i {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    width: 4rem;
+    height: 5rem;
+    background-color: var(--light);
+    border: 1px solid var(--c2);
+    color: var(--c2);
+    text-align: center;
+    margin: 5px;
+  }
+
+  .ex-container {
+    background-color: var(--c4);
+    margin-bottom: 1.4rem;
+    padding: 1rem;
+    width: 75%;
+    margin: 0 auto 1.4rem;
+  }
+
+  .ex-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: .5rem;
+  }
+
+  .ex-header>h2 {
+    font-size: 2rem;
+    margin-bottom: 0;
+  }
+
+  .ex-header>p {
+    font-size: 2rem;
+    margin: 0;
+  }
+
+  #logo {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 10rem;
+    height: 10rem;
+  }
+</style>
+
+<header>
+  <h1>CSS Nth-Child</h1>
+</header>
+<main></main>
+<img id="logo" src="../logo.png" alt="logo">
+
+<script>
+  const main = document.querySelector('main');
+  const divsCount = 7;
+  const selectors = [
+    ":nth-child(1)",
+    ":nth-child(odd)",
+    ":nth-child(even)",
+    ":nth-child(3n)",
+    ":nth-child(n+4)",
+    ":nth-last-child(-n+2)",
+    ":nth-child(n+3):nth-child(-n+6)"
+  ];
+
+  const descs = [
+    "İlk çocuk elementi seçer.",
+    "Tek sıradakileri seçer.",
+    "Çift sıradakileri seçer.",
+    "3'ün katlarını seçer.",
+    "4. çocuktan itibaren seçer.",
+    "Son iki çocuğu seçer.",
+    "3-6 aralığını seçer."
+  ]
+
+
+  for (let i = 0; i < divsCount; i++) {
+    const exContainer = document.createElement('div');
+    exContainer.className = "ex-container";
+
+    const exHeader = document.createElement('div');
+    exHeader.className = "ex-header";
+    exContainer.appendChild(exHeader);
+
+    const h2 = document.createElement('h2');
+    h2.textContent = selectors[i];
+    exHeader.appendChild(h2);
+
+    const p = document.createElement('p');
+    p.textContent = descs[i];
+    exHeader.appendChild(p);
+
+    const div = document.createElement('div');
+    div.className = "exa" + i;
+    exContainer.appendChild(div);
+    main.appendChild(exContainer);
+
+    for (let j = 1; j <= 9; j++) {
+      const i = document.createElement('i');
+      i.textContent = j;
+      div.appendChild(i);
+    }
+
+  }
+
+</script>

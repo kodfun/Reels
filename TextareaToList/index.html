@@ -1,0 +1,16 @@
+<textarea id="txt" cols="10" rows="10"></textarea>
+<ul id="list"></ul>
+
+<script>
+    var txt = document.getElementById('txt');
+    var list = document.getElementById('list');
+
+    txt.oninput = () => {
+      list.innerHTML = "";
+        for (const line of txt.value.split('\n')) {
+            const li = document.createElement('li');
+            li.innerHTML = line;
+            list.appendChild(li);
+        }
+    }
+</script>

@@ -14,11 +14,11 @@
   el = document.querySelector("h1");
 
   el.ondragstart = (e) => {
-    x = e.x, y = e.y;
+    x = e.x; y = e.y;
   };
 
   el.ondragend = (e) => {
-    tx += e.x - x, ty += e.y - y;
+    tx += e.x - x; ty += e.y - y;
     el.style.transform = 
     `translate(${tx}px, ${ty}px)`;
   };

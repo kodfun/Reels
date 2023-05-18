@@ -1,0 +1,25 @@
+<h1 draggable="true">
+  <img src="dancer.gif" height="66">
+  I Like To <br>Move It
+</h1>
+
+<style>
+  img { float: left; } 
+  h1 { cursor: move; }
+</style>
+
+
+<script>
+  let el, x, y, tx = 0, ty = 0;
+  el = document.querySelector("h1");
+
+  el.ondragstart = (e) => {
+    x = e.x, y = e.y;
+  };
+
+  el.ondragend = (e) => {
+    tx += e.x - x, ty += e.y - y;
+    el.style.transform = 
+    `translate(${tx}px, ${ty}px)`;
+  };
+</script>

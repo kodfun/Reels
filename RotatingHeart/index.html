@@ -1,0 +1,34 @@
+<div class="heart">
+  <span>KODFUN</span>
+</div>
+
+<style>
+  .heart {
+    width: 300px;
+    height: 300px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url("heart.svg") no-repeat;
+    background-position: center center;
+    background-size: contain;
+    font: bold 48px "Montserrat", sans-serif;
+    animation: turn 10s linear infinite;
+  }
+  .heart>span {
+    margin-top: -1em;
+  }
+  @keyframes turn {
+    0% { transform: rotateY(0deg); }
+    100% { transform: rotateY(360deg); }
+  }
+</style>
+
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+</style>

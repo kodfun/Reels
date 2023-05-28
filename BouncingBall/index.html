@@ -1,0 +1,34 @@
+<img id="ball" src="kodfun.png">
+
+<style>
+  #ball {
+    width: 20vmin;
+    border-radius: 50%;
+    position: absolute;
+  }
+</style>
+
+<script>
+  const ball = document.getElementById("ball");
+  let x = 0, y = 0, speed = 2;
+  let directionX = 1, directionY = 1;
+
+  function moveBall() {
+    if (x + ball.clientWidth >= window.innerWidth)
+      directionX = -1;
+    if (x <= 0) 
+      directionX = 1;
+    if (y + ball.clientHeight >= window.innerHeight) 
+      directionY = -1;
+    if (y <= 0) 
+      directionY = 1;
+    
+    x += speed * directionX; 
+    y += speed * directionY;
+    ball.style.left = x + "px";
+    ball.style.top = y + "px";
+    requestAnimationFrame(moveBall);
+  }
+
+  moveBall();
+</script>

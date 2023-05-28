@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8">
+  <title>TensorFlow.js Başlangıç</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+</head>
+
+<body>
+  <div id="sonuc">Öğrenme başlıyor...</div>
+  <script>
+    // Veri setini oluşturma
+    const xs = tf.tensor2d([...Array(1000)].map((_, i) => i + 1), [1000, 1]);
+    const ys = tf.tensor2d([...Array(1000)].map((_, i) => (i + 1) ** 2), [1000, 1]);
+
+    // Modeli oluşturma
+    const model = tf.sequential();
+    model.add(tf.layers.dense({ units: 64, inputShape: [1], activation: 'relu' }));
+    model.add(tf.layers.dense({ units: 64, activation: 'relu' }));
+    model.add(tf.layers.dense({ units: 1 }));
+
+    // Modeli derleme
+    model.compile({ loss: 'meanSquaredError', optimizer: 'adam' });
+
+    // Modeli eğitme
+    model.fit(xs, ys, { epochs: 1000 }).then(() => {
+      // Yeni bir sayının karesini tahmin etme
+      const input = tf.tensor2d([1000], [1, 1]);
+      const output = model.predict(input);
+      const prediction = Array.from(output.dataSync())[0];
+      document.write('Tahmin:' + prediction);
+    });
+  </script>
+</body>
+
+</html>

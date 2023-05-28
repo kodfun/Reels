@@ -1,0 +1,41 @@
+<div id="song">
+  My patience is waning Is this entertaining ?
+  My patience is waning Is this entertaining ? ?
+  I- I- I got this feeling, yeah, you know
+  Where I'm losing all control
+  'Cause there's magic in my bones
+</div>
+
+<script>
+  const div = document.getElementById('song');
+  const words = div.textContent.split(' ');
+
+  div.innerHTML = words.map((word, i) =>
+    `<span style="--x: ${i}">${word}</span>`
+  ).join(' ');
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aoboshi+One&display=swap" rel="stylesheet">
+
+<style>
+  #song>span {
+    opacity: 0%;
+    display: inline-block;
+    animation: .8s ease-out forwards show;
+    animation-delay: calc(.4s * var(--x));
+  }
+
+  @keyframes show {
+    0% { opacity: 0%; transform: translateY(-.5em); }
+    100% { opacity: 100%; transform: translateY(0); }
+  }
+
+  /* FOR DEMO PURPOSES */
+  body {
+    font-family: 'Aoboshi One', serif;
+    line-height: 1.5;
+    font-size: 2.5rem;
+  }
+</style>

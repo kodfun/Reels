@@ -1,3 +1,7 @@
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -5,7 +9,6 @@
 h1 {
     text-align: center;
     font-size: 50px;
-    font-family: 'Roboto', sans-serif;
     margin-top: 20px;
 }
 
@@ -14,6 +17,7 @@ textarea {
     height: 200px;
     font-size: 20px;
     font-family: 'Roboto', sans-serif;
+    font-size: 1.8rem;
     resize: none;
     border: 1px solid #ccc;
     border-radius: 5px;

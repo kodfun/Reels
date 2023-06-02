@@ -27,8 +27,8 @@
     durdur.onclick = () => speech.stop();
 
     speech.onresult = (event) => {
-      let sonuclar = event.results;
-      txt.value += sonuclar[sonuclar.length - 1][0].transcript;
+      let arr = event.results;
+      txt.value += arr[arr.length - 1][0].transcript;
     };
   </script>
 

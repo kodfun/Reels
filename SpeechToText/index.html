@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Konuşma Tanıma</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <h1>Konuşma Tanıma</h1>
+  <textarea id="txt" cols="30" rows="10"></textarea>
+  <button id="basla">Dinle</button>
+  <button id="durdur">Durdur</button>
+
+  <script>
+    let txt = document.getElementById("txt");
+    let basla = document.getElementById("basla");
+    let durdur = document.getElementById("durdur");
+
+    let speech = new webkitSpeechRecognition();
+    speech.lang = "en-US";
+    speech.continuous = true;
+
+    basla.onclick = () => speech.start();
+    durdur.onclick = () => speech.stop();
+
+    speech.onresult = (event) => {
+      let sonuclar = event.results;
+      txt.value += sonuclar[sonuclar.length - 1][0].transcript;
+    };
+  </script>
+
+</body>
+
+</html>

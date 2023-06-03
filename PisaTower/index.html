@@ -1,0 +1,162 @@
+<style>
+  :root {
+    --ratio: .8;
+  }
+
+  html,
+  body {
+    height: 100%;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #035491 0%, #719cbd 54%, #9d573c 65%, #343f27 68%, #465c27 72%, #83985a 86%, #465c27 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  h1 {
+    font-size: 7em;
+    color: #F5F5F5;
+    letter-spacing: 3px;
+    margin-bottom: 1rem;
+  }
+
+  div {
+    background: url("bg.png") no-repeat;
+    background-size: 100% auto;
+    width: calc(1280px * var(--ratio));
+    height: calc(1600px * var(--ratio));
+    position: relative;
+  }
+
+  img.pisa {
+    position: absolute;
+    top: calc(102px * var(--ratio));
+    left: calc(100px * var(--ratio));
+    width: calc(534px * var(--ratio));
+  }
+
+  .fix {
+    animation: fix ease 4s forwards;
+    transform-origin: bottom center;
+  }
+
+  img.code {
+    position: absolute;
+    top: calc(800px * var(--ratio));
+    left: calc(640px * var(--ratio));
+    width: calc(600px * var(--ratio));
+    opacity: 0;
+  }
+
+  /* .tower {
+    transform-origin: bottom center;
+    transform: rotate(-5deg);
+  } */
+
+  @keyframes fix {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(-5deg);
+    }
+  }
+
+  @keyframes fadein {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  .fadein {
+    animation: fadein ease 1s forwards;
+  }
+
+  span.active {
+    background-color: #F5F5F5;
+    color: #256b9f;
+  }
+</style>
+
+<audio id="titleSound" src="cssinreallife.m4a"></audio>
+<audio id="rumbleSound" src="rumble.mp3"></audio>
+<h1>CSS IN REAL LIFE</h1>
+<div>
+  <img src="code.png" class="code" alt="code">
+  <img class="pisa" src="pisa.png" width="267">
+</div>
+
+<script>
+  const div = document.querySelector('div');
+  const img = document.querySelector('img.pisa');
+  const h1 = document.querySelector('h1');
+  const code = document.querySelector('.code');
+
+
+  h1.innerHTML = h1.textContent.split(" ").map((w) => {
+    return `<span>${w}</span>`;
+  }).join(" ");
+
+  function begin() {
+    const timings = [0, 24 / 30, 1, 1 + 9 / 30];
+    const startTime = new Date();
+    let index = 0, timeout = 12 / 30;
+    let intervalId = setInterval(() => {
+      const currentTime = new Date();
+      const time = (currentTime - startTime) / 1000;
+      if (index >= timings.length) {
+        clearInterval(intervalId);
+        setTimeout(reset, timeout * 1000);
+      }
+      if (time > timings[index]) {
+        h1.querySelectorAll('span').forEach((span, i) => {
+          if (i === index) {
+            span.classList.add('active');
+          } else {
+            span.classList.remove('active');
+          }
+        });
+        index++;
+      }
+    }, 1000 / 30);
+  }
+
+  function reset() {
+    h1.querySelectorAll('span').forEach((span, i) => {
+      span.classList.remove('active');
+    });
+    showCode();
+  }
+
+  function showCode() {
+    code.classList.add('fadein');
+    setTimeout(fixpisa, 1000);
+  }
+
+  function fixpisa() {
+    img.classList.add('fix');
+    const audio = document.querySelector('#rumbleSound');
+    audio.currentTime = 0;
+    audio.play();
+    setTimeout(() => audio.pause(), 3500);
+  }
+
+  document.body.addEventListener('click', () => {
+    const audio = document.querySelector('#titleSound');
+    audio.currentTime = 0;
+    audio.play();
+    begin();
+  });
+
+</script>

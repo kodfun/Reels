@@ -1,0 +1,35 @@
+<main>
+  <div>COL 1</div>
+  <div>COL 2</div>
+  <div>COL 3</div>
+</main>
+
+<style>
+  main {
+    display: flex;
+    gap: 1rem;
+  }
+  main>div {
+    flex: 1;
+  }
+  @media (max-width: 600px) {
+    main {
+      flex-direction: column;
+    }
+  }
+  </style>
+  <style>
+
+  /* FOR DEMO PURPOSES */
+  main>div {
+    /* apple blue */
+    background: #007aff;
+    color: white; 
+    padding: 1em;
+    text-align: center;
+    border-radius: 1rem;
+    font-size: 2rem;
+    padding: 2rem 0;
+    font-family: "Montserrat", sans-serif;
+  }
+</style>

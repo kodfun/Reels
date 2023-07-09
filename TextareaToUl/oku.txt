@@ -1,0 +1,44 @@
+html ve javascript öğrendikten sonra durduk yere içinize 
+
+neden bu textarea içindeki satırları anlık olarak 
+
+altındaki listeye aktarmayayım şeklinde
+
+kuvvetli dürtüler gelebilir
+
+bu isteğe karşı koymayın ve yola koyulun
+
+textarea'nın oninput eventini kullanarak
+
+metin her değiştiğinde
+
+ul elementinin içindeki html'e
+
+önce metni split ile satırlara bölüp
+
+her bir satırı bir liste öğesi yaptıktan sonra
+
+join metodu ile birleştirerek
+
+tek bir parça halinde koyuyoruz
+
+
+ve gördüğünüz
+üzere
+mükemmel
+bir şekilde
+çalışıyor
+
+<textarea rows="7" cols="20"></textarea>
+<ul></ul>
+
+<script>
+    var txt = document.querySelector('textarea');
+    var ul = document.querySelector('ul');
+    
+    txt.oninput = () => 
+      ul.innerHTML = 
+        txt.value.split("\n")
+          .map(x => "<li>" + x + "</li>")
+          .join("");
+</script>

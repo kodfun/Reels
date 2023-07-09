@@ -1,0 +1,67 @@
+<textarea rows="5" cols="7"></textarea>
+<ul></ul>
+
+<script>
+    var txt = document.querySelector('textarea');
+    var ul = document.querySelector('ul');
+    
+    txt.oninput = () =>
+      ul.innerHTML = txt.value
+        .split("\n")
+        .map(x => "<li>" + x + "</li>")
+        .join("");
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+  html {
+    font-size: 32px;
+  }
+
+  textarea {
+    float: left;
+    font-size: 1rem;
+  }
+
+  ul {
+    float: left;
+    margin: 0;
+  }
+</style>

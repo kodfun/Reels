@@ -1,0 +1,28 @@
+<html>
+<head>
+  <title>KodFun</title>
+</head>
+<body>
+  <h1>KodFun</h1>
+  <script>
+    const title = document.title;
+
+    setInterval(() =>
+      document.title =
+        document.title == title
+          ? '(9) New Messages!!!'
+          : title
+      , 1000
+    );
+  </script>
+</body>
+</html>
+
+<style>
+  /* facebook colors and font */
+  body {
+    background-color: #3b5998;
+    color: #fff;
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  }
+</style>

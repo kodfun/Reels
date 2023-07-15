@@ -1,0 +1,22 @@
+<img id="ball" src="ball.png" width="100">
+
+<style>
+  #ball {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all .2s ease-out;
+  }
+</style>
+
+<script>
+  function move(event) {
+    const ball = document.getElementById("ball");
+    ball.style.left = event.pageX + "px";
+    ball.style.top = event.pageY + "px";
+  }
+
+  document.addEventListener("mousemove", move);
+  document.addEventListener("touchmove", move);
+</script>

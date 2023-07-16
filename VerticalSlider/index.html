@@ -1,0 +1,41 @@
+<div class="gallery">
+  <img src="1.jpg">
+  <img src="2.jpg">
+  <img src="3.jpg">
+  <img src="4.jpg">
+  <img src="5.jpg">
+  <img src="6.jpg">
+  <img src="7.jpg">
+</div>
+<style>
+  .gallery {
+    aspect-ratio: 9 / 16;
+    width: 400px;
+    overflow: hidden;
+  }
+  .gallery>img {
+    width: 100%;
+  }
+</style>
+
+<script>
+  function slideUp() {
+    let gallery = document.querySelector('.gallery');
+    let firstImage = gallery.querySelector('.gallery>img');
+    firstImage.animate([
+      { marginTop: '0' }, 
+      { marginTop: firstImage.height * -1 + 'px' }], {
+      duration: 1000,
+    }).onfinish = () => {
+      gallery.appendChild(firstImage);
+      setTimeout(slideUp, 1000);
+    };
+  }
+  setTimeout(slideUp, 1000);
+</script>
+
+<style>
+  body {
+    margin: 0;
+  }
+</style>

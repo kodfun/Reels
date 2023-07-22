@@ -1,0 +1,35 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+<style>
+  body {
+    background-color: green;
+    font-family: 'Chivo Mono', monospace;
+  }
+  #clock {
+    font-weight: 300;
+    font-size: 96px;
+    color: #feffff;
+    text-align: center;
+    text-shadow: 0 0 10px #ECF8FC;
+  }
+</style>
+
+<div id="clock"></div>
+
+<script>
+  const clock = document.getElementById('clock');
+  const addZero = x => x < 10 ? '0' + x : x;
+
+  function showTime() {
+    const date = new Date();
+    const hour = addZero(date.getHours());
+    const minute = addZero(date.getMinutes());
+    const second = addZero(date.getSeconds());
+    clock.innerText = `${hour}:${minute}:${second}`;
+  }
+
+  showTime();
+  setInterval(showTime, 1000);
+</script>

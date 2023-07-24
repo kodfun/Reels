@@ -1,0 +1,40 @@
+<div class="morph">
+  <div style="--i:1s">Text</div>
+  <div style="--i:2s">Morph</div>
+  <div style="--i:3s">Animation</div>
+  <div style="--i:4s">using</div>
+  <div style="--i:5s">CSS</div>
+  <div style="--i:6s">by</div>
+  <div style="--i:7s">KodFun</div>
+</div>
+
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@500&display=swap");
+  .morph {
+    background-color: black; color: white;
+    font: 5rem "Exo 2", sans-serif;
+    position: relative; height: 10rem;
+    filter: contrast(25) blur(1px);
+  }
+  .morph>div {
+    animation: show 16s infinite ease-in-out;
+    animation-delay: calc(var(--i) * 2 - 16s);
+    transform: translate(-50%, -50%);
+    position: absolute; top: 50%; left: 50%;
+    opacity: 0;
+  }
+  @keyframes show {
+    0%, 5%, 100% { filter: blur(0px); opacity: 1; }
+    20%, 80% { filter: blur(1em); opacity: 0; }
+  }
+</style>
+
+<style>
+  /* for instagram */
+  body {
+    background-color: #26537A;
+  }
+  .morph {
+    width: 808px;
+  }
+</style>

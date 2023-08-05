@@ -1,0 +1,19 @@
+<link rel="stylesheet" href="style.css">
+
+<textarea id="text">I          am the      wisest       man     alive,   for   I know     one    thing,        and   that  is    that I    know nothing.</textarea>
+<button id="btn">Remove Extra Spaces</button>
+
+<script>
+  let txt = document.getElementById("text");
+  let btn = document.getElementById("btn");
+
+  btn.onclick = function() {
+    // txt.value =
+    //   txt.value.split(" ")
+    //     .filter(Boolean)
+    //     .join(" ");
+
+    txt.value =
+      txt.value.replace(/\s+/g, " ");
+  };
+</script>

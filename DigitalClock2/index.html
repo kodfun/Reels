@@ -1,0 +1,11 @@
+<link rel="stylesheet" href="style.css">
+
+<div id="saat">00:00:00</div>
+
+<script>
+  setInterval(() => 
+    document.getElementById("saat")
+      .textContent = new Date()
+        .toLocaleTimeString("tr")
+  , 1000);
+</script>  

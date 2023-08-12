@@ -1,0 +1,31 @@
+<p id="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur architecto fuga, maiores dignissimos unde eum praesentium laudantium quisquam eligendi quia ea perspiciatis doloribus porro, aspernatur eaque ducimus earum, asperiores dolorum?</p>
+
+<script>
+  const d = 5;
+  const p = document.getElementById('text');
+  p.innerHTML = p.innerText
+    .split('')
+    .map(x => x == " " ? x : `<span>${x}</span>`)
+    .join('');
+  const spans = document.querySelectorAll('#text>span');
+  const r = () => Math.floor(Math.random() * d - d / 2);
+  setInterval(function () {
+    for (const span of spans) {
+      span.style.transform = `translate(${r()}px, ${r()}px)`;
+    }
+  }, 50);
+
+</script>
+
+<style>
+  body {
+    background-color: #000;
+    color: white;
+    margin: 5rem;
+    font-size: 3em;
+  }
+  #text>span {
+    display: inline-block;
+    transition: all .1s linear;
+  }
+</style>

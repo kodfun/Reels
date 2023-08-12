@@ -1,0 +1,10 @@
+body {
+  background-color: black;
+  font-family: 'Courier New', Courier, monospace;
+  color: white;
+  font-size: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 900;
+}

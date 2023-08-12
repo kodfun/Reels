@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mouse: Oppenheimer</title>
+  <style>
+    html, body { height: 100%; margin: 0; }
+    body { cursor: url(oppenheimer.png), auto; }
+
+  </style>
+</head>
+
+<body>
+  <h1>@KodFun</h1>
+  <script>
+    document.onmousemove = (e) => {
+      let img = document.createElement("img");
+      img.src = "oppenheimer.png";
+      img.style.position = "absolute";
+      img.style.left = e.pageX + "px";
+      img.style.top = e.pageY + "px";
+      img.animate([{ opacity: 0 }], 
+        { duration: 400 }).onfinish = 
+          () => img.remove();
+      document.body.append(img);
+    };
+  </script>
+
+  <style>
+    
+    body {
+      background-color: #d9e4f5;
+      background-image: linear-gradient(315deg, #d9e4f5 0%, #f5e3e6 74%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 7vw;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      overflow: hidden;
+    }
+
+    h1 {
+      opacity: .05;
+    }
+  </style>
+</body>
+
+</html>

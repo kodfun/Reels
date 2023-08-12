@@ -1,0 +1,23 @@
+<input type="password" id="pwd">
+<input type="checkbox" id="chk"> Show Password
+
+<script>
+  const pwd = document.getElementById("pwd");
+  const chk = document.getElementById("chk");
+
+  chk.onchange = function(e)  {
+    pwd.type = chk.checked ? "text" : "password";
+  };
+</script>
+
+<style>
+  
+
+  @import url(https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css);
+
+  body {
+    background-color: #d9d4e3;
+    margin: 1rem;
+    font-weight: 600;
+  }
+</style>

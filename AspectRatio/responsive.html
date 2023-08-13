@@ -1,0 +1,63 @@
+<div class="gallery"><img src="//picsum.photos/id/1/528/800"><img src="//picsum.photos/id/2/100/100"><img
+    src="//picsum.photos/id/3/700/394"><img src="//picsum.photos/id/4/800/389"><img
+    src="//picsum.photos/id/5/1080/1080"><img src="//picsum.photos/id/6/1920/1080"><img
+    src="//picsum.photos/id/7/1200/800"><img src="//picsum.photos/id/8/1072/720"><img
+    src="//picsum.photos/id/9/1684/1000"><img src="//picsum.photos/id/10/1344/850"><img
+    src="//picsum.photos/id/11/624/420"><img src="//picsum.photos/id/12/960/600"></div>
+
+<style>
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: .5rem;
+  }
+
+  .gallery>img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+  }
+
+  @media screen and (max-width: 576px) {
+    .gallery {
+      grid-template-columns: repeat(1, 1fr);
+      gap: .3rem;
+    }
+
+    .gallery>img {
+      aspect-ratio: auto;
+    }
+  }
+
+  @media screen and (min-width: 576px) {
+    .gallery {
+      grid-template-columns: repeat(2, 1fr);
+      gap: .4rem;
+    }
+
+    .gallery>img {
+      aspect-ratio: 1 / 1;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .gallery {
+      grid-template-columns: repeat(3, 1fr);
+      gap: .5rem;
+    }
+  }
+
+  @media screen and (min-width: 992px) {
+    .gallery {
+      grid-template-columns: repeat(4, 1fr);
+      gap: .6rem;
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    .gallery {
+      grid-template-columns: repeat(6, 1fr);
+      gap: 1rem;
+    }
+  }
+</style>

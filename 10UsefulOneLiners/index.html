@@ -1,0 +1,63 @@
+<script>
+  console.log = s => document.write(s + "<br>");
+  
+  const capitalizeWords = 
+    s => s.replace(/\b\w/g, c => c.toUpperCase());
+
+  // OUTPUT: Coding Is Fun
+  console.log(capitalizeWords("coding is fun"));
+
+  const reversedString = 
+    str => str.split('').reverse().join('');
+
+  // OUTPUT: nuFdoK
+  console.log(reversedString("KodFun"));
+
+  const longestWord = s => s.split(' ')
+    .reduce((l, w) => w.length > l.length ? w : l);
+
+  // OUTPUT: having
+  console.log(longestWord("I am having fun!"));
+
+  const factorial = 
+    n => n < 2 ? 1 : n * factorial(n - 1);
+
+  // OUTPUT: 720
+  console.log(factorial(6));
+
+  const uniqueArray = 
+    array => [...new Set(array)];
+
+  // OUTPUT: [1, 2, 3]
+  console.log(uniqueArray([1, 2, 2, 3, 3, 3]));
+
+  let a = 3, b = 4;
+  console.log(a, b); // 3 4
+
+  [a, b] = [b, a];
+  console.log(a, b); // 4 3
+
+  const maxValue = 
+    array => Math.max(...array);
+
+  // OUTPUT: 9
+  console.log(maxValue([8, 7, 9, 3]));
+
+  const sum =  
+    arr => arr.reduce((s, a) => s + a, 0);
+  
+  // OUTPUT: 108
+  console.log(sum([4, 8, 15, 16, 23, 42]));
+
+  const num = +"32";
+
+
+  console.log("2" + "2");   // 22
+  console.log(+"2" + +"2"); // 4
+
+  const randomInRange = (a, b) => 
+    Math.floor(Math.random() * (b - a + 1)) + a;
+
+  // OUTPUT: 6
+  console.log(randomInRange(1, 6));
+</script>

@@ -1,0 +1,46 @@
+<div class="box1">BACKGROUND ANIMATION</div>
+
+<style>
+  .box1 {
+    animation: anim1 5s linear infinite;
+  }
+
+  @keyframes anim1 {
+    0% { background-color: cyan }
+    33% { background-color: magenta }
+    66% { background-color: yellow }
+    100% { background-color: cyan }
+  }
+</style>
+
+<div class="box2">TRANSFORM ANIMATION</div>
+
+<style>
+  .box2 {
+    background: #000;
+    animation: anim2 5s linear alternate infinite;
+  }
+
+  @keyframes anim2 {
+    0% { transform: scale(.3) rotate(0deg); }
+    100% { transform: scale(1) rotate(360deg); }
+  }
+</style>
+
+<!-- animation -->
+
+<style>
+    div {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    font-size: 1.3rem;
+  }
+</style>

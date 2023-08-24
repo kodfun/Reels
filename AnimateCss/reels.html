@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animate.css Reels</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,200;10..48,300;10..48,400;10..48,500;10..48,600;10..48,700;10..48,800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    :root {
+      --c1: #24292e;
+      --c2: #e1e4e8;
+      --c3: #85e89d;
+      --c4: #b392f0;
+      --c5: #9ecbff;
+    }
+
+    html {
+      font-size: 24px;
+    }
+
+    body {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      color: #543214;
+      margin: 0;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .anim-container {
+      display: flex;
+      flex-direction: row;
+      align-items: stretch;
+      justify-content: space-between;
+      padding: .5rem 0;
+      gap: 1rem;
+      margin: 0 5rem;  
+    }
+
+    div.anim-pane {
+      flex: 3;
+      background-color: rgb(255, 255, 255, .2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    pre {
+      background-color: var(--c1);
+      color: var(--c2);
+      padding: .8rem;
+      border-radius: .5rem;
+    }
+
+
+    h1 {
+      margin: 0;
+      color: #71441d;
+    }
+
+    pre {
+      flex: 3;
+      margin: 0;
+    }
+
+    main {
+      position: relative;
+      max-width: 1080px;
+      background-color: rgb(88, 248, 39);
+      background-color: #FBAB7E;
+      background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+      aspect-ratio: 9 / 16;
+      padding-top: 2rem;
+    }
+
+    .title {
+      font-family: 'montserrat', sans-serif;
+      font-size: 3rem;
+      font-weight: 600;
+      text-align: center;
+      padding: 1rem 0 .5rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    .title>.line2 {
+      font-size: 1.114em;
+    }
+
+    .usage {
+      font-family: 'montserrat', sans-serif;
+      font-size: 1rem;
+      font-weight: 300;
+      text-align: center;
+      padding: .3rem;
+      opacity: .8;
+      margin-bottom: .25rem;
+    }
+
+    .cdn {
+      margin: 0 5rem;
+      font-size: 1.2rem;
+    }
+
+    #logo {
+      position: absolute;
+      bottom: 2rem;
+      right: 2rem;
+      width: 8rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <main>
+    <div class="title animate__animated animate__flash animate__delay-1s">
+      <span class="line1">Animate.css ile Yazıları</span><br><span class="line2">Kolayca Canlandırın!</span>
+    </div>
+    <pre class="cdn">&lt;<span style="color: var(--c3)">link</span> <span style="color: var(--c4)">rel</span>=<span style="color: var(--c5)">"stylesheet"</span> <span style="color: var(--c4)">href</span>=<span style="color: var(--c5)">"animate.css"</span> /&gt;</pre>
+    <div class="usage">(https://animate.style adresindeki CDN linkini kullanabilirsiniz.)</div>
+    <img src="../logo.png" alt="logo" id="logo">
+  </main>
+  
+
+  <script>
+    const animNames = [
+      "bounce",
+      "fadeIn",
+      "flip",
+      "tada",
+      "headShake",
+      "zoomIn",
+      "heartBeat"
+    ];
+
+    const anims = animNames.map(animName => {
+      return `<h1 class="animate__animated 
+           animate__${animName} 
+           animate__infinite">
+  ${animName}</h1>`;
+    });
+    
+    const main = document.querySelector('main');
+    anims.forEach(anim => {
+      main.innerHTML += (
+        `<div class="anim-container">
+  <div class="anim-pane">${anim}</div>
+  <pre>${encodeHTMLEntities(anim)}</pre>
+</div>`);
+    });
+
+    function encodeHTMLEntities(text) {
+      var p = document.createElement('p');
+      p.innerText = text;
+      let html = p.innerHTML;
+      html = html.replace(/"([^"]+)"/g, '<span style="color: var(--c5);">"$1"</span>');
+      html = html.replace(/h1/g, '<span style="color: var(--c3);">h1</span>');
+      html = html.replace(/class/g, '<span style="color: var(--c4);">class</span>');
+      return html;
+    }
+  </script>
+</body>
+
+</html>

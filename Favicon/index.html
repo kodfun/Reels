@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>KodFun</title>
+  <link rel="icon" href="0.png">
+</head>
+<body>
+  
+  <script>
+    const link = document.querySelector("link[rel='icon']");
+    let i = 0;
+    setInterval(() => link.href = `${++i % 7}.png`, 500);
+  </script>
+</body>
+</html>

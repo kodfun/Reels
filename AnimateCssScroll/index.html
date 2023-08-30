@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animate.style and Wow.js</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <style>
+    h1,
+    h2 {
+      text-align: center;
+    }
+
+    h1 {
+      background-color: gray;
+    }
+  </style>
+</head>
+
+<body>
+
+  <script>
+    const animations = {
+      "Attention seekers": [
+        "bounce",
+        "flash",
+        "pulse",
+        "rubberBand",
+        "shakeX",
+        "shakeY",
+        "headShake",
+        "swing",
+        "tada",
+        "wobble",
+        "jello",
+        "heartBeat",
+      ],
+      "Back entrances": [
+        "backInDown",
+        "backInLeft",
+        "backInRight",
+        "backInUp",
+      ],
+      "Back exits": [
+        "backOutDown",
+        "backOutLeft",
+        "backOutRight",
+        "backOutUp",
+      ],
+      "Bouncing entrances": [
+        "bounceIn",
+        "bounceInDown",
+        "bounceInLeft",
+        "bounceInRight",
+        "bounceInUp",
+      ],
+      "Bouncing exits": [
+        "bounceOut",
+        "bounceOutDown",
+        "bounceOutLeft",
+        "bounceOutRight",
+        "bounceOutUp",
+      ],
+      "Fading entrances": [
+        "fadeIn",
+        "fadeInDown",
+        "fadeInDownBig",
+        "fadeInLeft",
+        "fadeInLeftBig",
+        "fadeInRight",
+        "fadeInRightBig",
+        "fadeInUp",
+        "fadeInUpBig",
+        "fadeInTopLeft",
+        "fadeInTopRight",
+        "fadeInBottomLeft",
+        "fadeInBottomRight",
+      ],
+      "Fading exits": [
+        "fadeOut",
+        "fadeOutDown",
+        "fadeOutDownBig",
+        "fadeOutLeft",
+        "fadeOutLeftBig",
+        "fadeOutRight",
+        "fadeOutRightBig",
+        "fadeOutUp",
+        "fadeOutUpBig",
+        "fadeOutTopLeft",
+        "fadeOutTopRight",
+        "fadeOutBottomRight",
+        "fadeOutBottomLeft",
+      ],
+      "Flippers": [
+        "flip",
+        "flipInX",
+        "flipInY",
+        "flipOutX",
+        "flipOutY",
+      ],
+      "Lightspeed": [
+        "lightSpeedInRight",
+        "lightSpeedInLeft",
+        "lightSpeedOutRight",
+        "lightSpeedOutLeft",
+      ],
+      "Rotating entrances": [
+        "rotateIn",
+        "rotateInDownLeft",
+        "rotateInDownRight",
+        "rotateInUpLeft",
+        "rotateInUpRight",
+      ],
+      "Rotating exits": [
+        "rotateOut",
+        "rotateOutDownLeft",
+        "rotateOutDownRight",
+        "rotateOutUpLeft",
+        "rotateOutUpRight",
+      ],
+      "Specials": [
+        "hinge",
+        "jackInTheBox",
+        "rollIn",
+        "rollOut",
+      ],
+      "Zooming entrances": [
+        "zoomIn",
+        "zoomInDown",
+        "zoomInLeft",
+        "zoomInRight",
+        "zoomInUp",
+      ],
+      "Zooming exits": [
+        "zoomOut",
+        "zoomOutDown",
+        "zoomOutLeft",
+        "zoomOutRight",
+        "zoomOutUp",
+      ],
+      "Sliding entrances": [
+        "slideInDown",
+        "slideInLeft",
+        "slideInRight",
+        "slideInUp",
+      ],
+      "Sliding exits": [
+        "slideOutDown",
+        "slideOutLeft",
+        "slideOutRight",
+        "slideOutUp",
+      ],
+    };
+
+    for (var key in animations) {
+      const div = document.createElement("div");
+      const h1 = document.createElement("h1");
+      h1.textContent = key;
+      div.appendChild(h1);
+      const anims = animations[key];
+      for (const anim of anims) {
+        const h2 = document.createElement("h2");
+        h2.textContent = anim;
+        h2.className = `wow animate__animated animate__${anim}`;
+        div.appendChild(h2);
+      }
+      document.body.appendChild(div);
+    }
+
+
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js" integrity="sha512-Eak/29OTpb36LLo2r47IpVzPBLXnAMPAVypbSZiZ4Qkf8p/7S/XRG5xp7OKWPPYfJT6metI+IORkR5G8F900+g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    new WOW().init();
+    </script>
+</body>
+
+</html>

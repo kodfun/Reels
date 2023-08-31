@@ -6,16 +6,11 @@
   <title>Gılgamış Destanı</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    body { 
-      position: relative;
-      overflow: hidden;
-      margin: 0;
-    }
     #dark {
-      width: 9000px;
-      height: 9000px;
-      background: radial-gradient(transparent, rgba(0, 0, 0, 0.9) 2%, black);
-      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 50% 50%, transparent, rgba(0, 0, 0, 0.9) 200px, black);
+      position: fixed;
       top: 0;
       left: 0;
       z-index: 999;
@@ -23,47 +18,47 @@
   </style>
 </head>
 <body>
-<div class="container">
-
-    <div id="dark"></div>
-  
-    <h1>Antik Mezopotamya'nın Epik Destanı: Gılgamış'ın Maceraları ve Ölümsüzlük Arayışı</h1>
-  
-    <p>"Gılgamış Destanı," antik Mezopotamya kültüründe kökeni olan epik bir şiirdir. Bu destan, Sümerlerin yaşadığı bölgede M.Ö. 2100-2000 yılları arasında derlenmeye başladığı düşünülen eski tabletler üzerine yazılmıştır. Metin, Gılgamış adında bir kralın maceralarını ve ölümsüzlüğün peşindeki arayışını anlatır. Destan, Sümer mitolojisinin ve insanlık tarihine dair temaların karmaşık bir örgüsünü içerir.</p>
-  
-    <p>Gılgamış, Uruk şehrini yöneten bir kraldır. Güçlü ama zalim bir liderdir ve tanrılar onun davranışlarına müdahale etmeye karar verir. Tanrılar, Enkidu adında bir vahşi adamı yaratırlar ve onu Gılgamış'ın yanına gönderirler. Gılgamış ile Enkidu arkadaş olur ve birlikte çeşitli maceralara atılırlar.</p>
-  
-    <p>Bir gün, Tanrıça İştar, Gılgamış'a aşık olur, ancak Gılgamış onun teklifini reddeder. İştar, öfkeyle Tanrı Anu'ya şikayet eder ve Tanrı Anu, Gılgamış'a ölümsüzlük vermek yerine onun arkadaşı Enkidu'nun ölmesini emreder. Enkidu ölünce, Gılgamış ölümün anlamını ve kendi ölümlülüğünü sorgular.</p>
-  
-    <p>Gılgamış, ölümsüzlüğü araştırmak ve kendi ölüm korkusuyla yüzleşmek için yola çıkar. Uzun bir yolculuktan sonra, Utnapiştim adında bir kahinle tanışır. Utnapiştim, büyük bir tufanın geldiği ve kendisinin ve ailesinin bir gemide kurtulduğu bir hikayeyi anlatır. Bu gemi, tüm canlıların yok olduğu tufandan sonra karaya oturmuştur.</p>
-  
-    <p>Utnapiştim, Gılgamış'a ölümsüzlüğün sırrını anlatır, ancak bunun yerine Gılgamış'ı kendi insanlığının ve yaşamının değerini anlamaya teşvik eder. Gılgamış, eve dönerken yolda birçok sınavla karşılaşır ve sonunda Uruk'a dönerken ölümsüzlük arayışını terk eder.</p>
-  
-    <p>"Gılgamış Destanı," insanın ölüm ve ölümsüzlük arayışı, insan ilişkileri, kahramanlık ve insanlık hakkında derin düşünceleri ele alır. Bu eser, antik Mezopotamya'nın kültürel ve dini inançları hakkında da önemli bilgiler sunar.</p>
-  
-    <h1>The Epic of Gilgamesh: Adventures of Gilgamesh and the Quest for Immortality</h1>
-  
-    <p>The "Epic of Gilgamesh" is an epic poem with origins in the ancient Mesopotamian culture. Composed on clay tablets in the region where the Sumerians lived around 2100-2000 BC, this narrative recounts the adventures of Gilgamesh, a king, and his pursuit of immortality. The epic weaves a complex tapestry of Sumerian mythology and themes related to human history.</p>
-  
-    <p>Gilgamesh is a king who rules the city of Uruk. He is powerful but tyrannical, leading the gods to intervene in his actions. The gods create Enkidu, a wild man, and send him to Gilgamesh. Gilgamesh and Enkidu become friends and embark on various adventures together.</p>
-  
-    <p>One day, the Goddess Ishtar falls in love with Gilgamesh, but he rejects her advances. In anger, Ishtar complains to the God Anu, and instead of granting Gilgamesh immortality, Anu orders Enkidu's death. With Enkidu's death, Gilgamesh questions the meaning of death and his own mortality.</p>
-  
-    <p>Gilgamesh sets out on a journey to explore immortality and confront his fear of death. After a long journey, he encounters a sage named Utnapishtim. Utnapishtim recounts a story of a great flood and how he and his family survived on a ship when all living things were wiped out.</p>
-  
-    <p>Utnapishtim reveals the secret of immortality to Gilgamesh, but instead encourages him to understand the value of his humanity and life. As Gilgamesh returns home, he faces various trials along the way and eventually abandons his quest for immortality as he reaches Uruk.</p>
-  
-    <p>The "Epic of Gilgamesh" explores deep reflections on death, the search for immortality, human relationships, heroism, and humanity. This work also provides significant insights into the cultural and religious beliefs of ancient Mesopotamia.</p>
+  <div id="dark"></div>
+  <div class="container">
+      <h1>Antik Mezopotamya'nın Epik Destanı: Gılgamış'ın Maceraları ve Ölümsüzlük Arayışı</h1>
+    
+      <p>"Gılgamış Destanı," antik Mezopotamya kültüründe kökeni olan epik bir şiirdir. Bu destan, Sümerlerin yaşadığı bölgede M.Ö. 2100-2000 yılları arasında derlenmeye başladığı düşünülen eski tabletler üzerine yazılmıştır. Metin, Gılgamış adında bir kralın maceralarını ve ölümsüzlüğün peşindeki arayışını anlatır. Destan, Sümer mitolojisinin ve insanlık tarihine dair temaların karmaşık bir örgüsünü içerir.</p>
+    
+      <p>Gılgamış, Uruk şehrini yöneten bir kraldır. Güçlü ama zalim bir liderdir ve tanrılar onun davranışlarına müdahale etmeye karar verir. Tanrılar, Enkidu adında bir vahşi adamı yaratırlar ve onu Gılgamış'ın yanına gönderirler. Gılgamış ile Enkidu arkadaş olur ve birlikte çeşitli maceralara atılırlar.</p>
+    
+      <p>Bir gün, Tanrıça İştar, Gılgamış'a aşık olur, ancak Gılgamış onun teklifini reddeder. İştar, öfkeyle Tanrı Anu'ya şikayet eder ve Tanrı Anu, Gılgamış'a ölümsüzlük vermek yerine onun arkadaşı Enkidu'nun ölmesini emreder. Enkidu ölünce, Gılgamış ölümün anlamını ve kendi ölümlülüğünü sorgular.</p>
+    
+      <p>Gılgamış, ölümsüzlüğü araştırmak ve kendi ölüm korkusuyla yüzleşmek için yola çıkar. Uzun bir yolculuktan sonra, Utnapiştim adında bir kahinle tanışır. Utnapiştim, büyük bir tufanın geldiği ve kendisinin ve ailesinin bir gemide kurtulduğu bir hikayeyi anlatır. Bu gemi, tüm canlıların yok olduğu tufandan sonra karaya oturmuştur.</p>
+    
+      <p>Utnapiştim, Gılgamış'a ölümsüzlüğün sırrını anlatır, ancak bunun yerine Gılgamış'ı kendi insanlığının ve yaşamının değerini anlamaya teşvik eder. Gılgamış, eve dönerken yolda birçok sınavla karşılaşır ve sonunda Uruk'a dönerken ölümsüzlük arayışını terk eder.</p>
+    
+      <p>"Gılgamış Destanı," insanın ölüm ve ölümsüzlük arayışı, insan ilişkileri, kahramanlık ve insanlık hakkında derin düşünceleri ele alır. Bu eser, antik Mezopotamya'nın kültürel ve dini inançları hakkında da önemli bilgiler sunar.</p>
+    
+      <h1>The Epic of Gilgamesh: Adventures of Gilgamesh and the Quest for Immortality</h1>
+    
+      <p>The "Epic of Gilgamesh" is an epic poem with origins in the ancient Mesopotamian culture. Composed on clay tablets in the region where the Sumerians lived around 2100-2000 BC, this narrative recounts the adventures of Gilgamesh, a king, and his pursuit of immortality. The epic weaves a complex tapestry of Sumerian mythology and themes related to human history.</p>
+    
+      <p>Gilgamesh is a king who rules the city of Uruk. He is powerful but tyrannical, leading the gods to intervene in his actions. The gods create Enkidu, a wild man, and send him to Gilgamesh. Gilgamesh and Enkidu become friends and embark on various adventures together.</p>
+    
+      <p>One day, the Goddess Ishtar falls in love with Gilgamesh, but he rejects her advances. In anger, Ishtar complains to the God Anu, and instead of granting Gilgamesh immortality, Anu orders Enkidu's death. With Enkidu's death, Gilgamesh questions the meaning of death and his own mortality.</p>
+    
+      <p>Gilgamesh sets out on a journey to explore immortality and confront his fear of death. After a long journey, he encounters a sage named Utnapishtim. Utnapishtim recounts a story of a great flood and how he and his family survived on a ship when all living things were wiped out.</p>
+    
+      <p>Utnapishtim reveals the secret of immortality to Gilgamesh, but instead encourages him to understand the value of his humanity and life. As Gilgamesh returns home, he faces various trials along the way and eventually abandons his quest for immortality as he reaches Uruk.</p>
+    
+      <p>The "Epic of Gilgamesh" explores deep reflections on death, the search for immortality, human relationships, heroism, and humanity. This work also provides significant insights into the cultural and religious beliefs of ancient Mesopotamia.</p>
+  </div>
 
     <script>
       const dark = document.getElementById("dark");
 
       window.onmousemove = function(e) {
-        dark.style.top = `${e.pageY - 4500}px`;
-        dark.style.left = `${e.pageX - 4500}px`;
+        console.log(e);
+        const x = e.x / window.innerWidth * 100;
+        const y = e.y / window.innerHeight * 100;
+        console.log(x, y);
+        dark.style.background = `radial-gradient(circle at ${x}% ${y}%, transparent, rgba(0, 0, 0, 0.9) 200px, black)`;
       };
     </script>
-</div>
-
 </body>
 </html>

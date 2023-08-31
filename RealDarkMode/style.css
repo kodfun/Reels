@@ -1,12 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Eagle+Lake&display=swap');
 
-html {
-}
-
 body {
   background: url("bg.jpg");
   background-size: 100% auto;font-family: 'Eagle Lake', cursive;
-  padding: 2rem;
+  padding: 1rem;
 }
 
 h1 {

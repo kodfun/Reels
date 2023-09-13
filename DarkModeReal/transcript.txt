@@ -1,0 +1,16 @@
+Sosyal medyada bu eğlenceli karanlık moda rastladım ve kodlamasını nasıl yapacağımı düşündüm.
+
+Uygulaması sandığımdan çok daha kolay oldu.
+
+İlk adımda sayfanın body'sine id'si dark olan boş bir div elementi yerleştirdim.
+
+Sonra verdiğim CSS ile sayfanın tamamını kaplamasını sağladım ve ortası oval bir transparan bölge içerecek şekilde radial gradient background  verdim. 
+
+Geriye sadece javascript ile bu transparan bölgeyi fare imleci ile hareketlendirmek kalmıştı. 
+
+window nesnesinin mousemove eventi sayesinde fare hareketini yakaladım ve sürekli olarak aydınlık kısmın konumunu güncelledim.
+
+İşte bu el fenerine benzeyen eğlenceli karanlık modumuz kullanıma hazır.
+
+
+

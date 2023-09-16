@@ -1,0 +1,10 @@
+HTML ve CSS ile tasarlanmış bir ürün listesi görmektesiniz.
+
+Ürünlerin isimleri farklı uzunlukta olduğu için gördüğünüz üzere fiyatlar ve kutuların alt kısmı aynı hizada bulunmuyor.
+
+Bu sorunun çözümünde 2 yaklaşımı göstereceğim.
+
+Birincisi ürün başlıklarını yeterli bir yükseklikte eşitlemek.
+
+İkincisi ise ürün başlıklarını tek satıra indirip taşan kısımlarını gizledikten sonra sonuna ellipsis adı verilen üç nokta simgesini koymak.
+

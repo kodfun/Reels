@@ -1,0 +1,27 @@
+<script id="lzutf8" src="https://cdn.jsdelivr.net/npm/lzutf8/build/production/lzutf8.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lz-string/1.5.0/lz-string.min.js" integrity="sha512-qtX0GLM3qX8rxJN1gyDfcnMFFrKvixfoEOwbBib9VafR5vbChV5LeE5wSI/x+IlCkTY5ZFddFDCCfaVJJNnuKQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<textarea id="txt" cols="80" rows="20"></textarea>
+<textarea id="res" cols="80" rows="20"></textarea>
+
+
+<script>
+  var compressed = LZUTF8.compress("Hello World");
+  var decompressed = LZUTF8.decompress(compressed);
+  console.log(decompressed);
+
+  const txt = document.getElementById('txt');
+
+  txt.oninput = function() {
+    // const res = document.getElementById('res');
+    // let arr = LZUTF8.compress(txt.value, { });
+    // res.value = arr;
+    // console.log(arr);
+
+    const res = document.getElementById('res');
+    let arr = LZString.compressToUTF16(txt.value);
+    const decompressed = LZString.decompressFromUTF16 (arr);
+    res.value = txt.value.length + ' -> ' + arr.length + '\n';
+    console.log(txt.value === decompressed)
+  };
+</script>

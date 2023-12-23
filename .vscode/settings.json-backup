@@ -6,6 +6,6 @@
   "editor.parameterHints.cycle": true,
   "editor.parameterHints.enabled": false,
   "editor.suggestOnTriggerCharacters": false,
-  "editor.wordBasedSuggestions": false,
+  "editor.wordBasedSuggestions": "off",
   "editor.quickSuggestionsDelay": 1000000
 }

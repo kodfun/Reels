@@ -1,0 +1,25 @@
+html, body {
+  margin: 0;
+}
+
+form {
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+input:user-invalid {
+  border: 5px solid red;
+}
+
+input+span {
+  display: none;
+}
+
+input:user-invalid+span {
+  display: inline;
+}

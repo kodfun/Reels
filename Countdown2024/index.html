@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <title>Countdown Timer</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap');
+
+    #countdown {
+      font-family: 'Rubik Doodle Shadow', cursive;
+      font-size: 42px;
+      font-weight: bold;
+      text-align: center;
+      margin-top: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="countdown"></div>
+
+  <script>
+    const countdown = setInterval(function () {
+      const timeLeft = new Date(2024, 0, 1) - new Date();
+
+      if (timeLeft <= 0) {
+        clearInterval(countdown);
+        document.getElementById("countdown").innerHTML = "Welcome 2024!";
+      } else {
+        const days = Math.floor(
+          timeLeft / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor(
+          (timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor(
+          (timeLeft % (1000 * 60)) / 1000);
+
+        document.getElementById("countdown").innerHTML =
+          `${days} days ${hours} hours ${minutes} minutes ${seconds} seconds`;
+      }
+    }, 1000);
+  </script>
+
+</body>
+
+</html>

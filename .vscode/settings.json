@@ -1,3 +1,11 @@
 {
-  "livePreview.defaultPreviewPath": "/EsnekGaleri/index.html"
+  "livePreview.defaultPreviewPath": "/WebSpeechApi/index.html",
+  "[javascript]": {
+    "editor.inlineSuggest.enabled": false
+  },
+  "editor.parameterHints.cycle": true,
+  "editor.parameterHints.enabled": false,
+  "editor.suggestOnTriggerCharacters": false,
+  "editor.wordBasedSuggestions": "off",
+  "editor.quickSuggestionsDelay": 1000000
 }

@@ -1,0 +1,13 @@
+.balls {
+  border-bottom: 10px groove black;
+  height: 330px; display: flex; align-items: flex-end;
+}
+
+div.balls>img {
+  animation: jump 1s infinite alternate;
+  animation-delay: var(--i);
+}
+
+@keyframes jump {
+  to { transform: translateY(-200px); }
+}

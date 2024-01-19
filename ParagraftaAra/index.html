@@ -1,0 +1,12 @@
+<input id="txt" type="text" placeholder="search">
+<p id="parag">Bob loves to bob for apples in his free time. Time flies when he's having fun. He finds fun in the simplest things. Things like bobbing for apples, for instance. KodFun is my name and have fun with me while coding.</p>
+
+
+<script>
+document.getElementById('txt').oninput = function() {
+  const p = document.getElementById('parag');
+  const r = new RegExp(`(${this.value})`, 'gi');
+  p.innerHTML = 
+    p.textContent.replace(r, '<mark>$1</mark>');
+};
+</script>

@@ -1,0 +1,12 @@
+<input id="txt" type="text" placeholder="search">
+<p id="parag">Bob loves to bo...e while coding.</p>
+
+
+<script>
+document.getElementById('txt').oninput = function() {
+  const p = document.getElementById('parag');
+  const r = new RegExp(`(${this.value})`, 'gi');
+  p.innerHTML = 
+    p.textContent.replace(r, '<mark>$1</mark>');
+};
+</script>

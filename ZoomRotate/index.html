@@ -1,0 +1,21 @@
+<div class="gallery">
+  <div><img src="1.png"></div>
+  <div><img src="2.png"></div>
+  <div><img src="3.png"></div>
+</div>
+
+<style>
+  .gallery { display: flex; gap: 1rem; }
+
+  .gallery>div {
+    flex: 1; overflow: hidden;
+    border-radius: 1rem;
+    box-shadow: 0 0 4px #000a;
+  }
+  
+  img { width: 100%; transition: all .5s; }
+  
+  img:hover {
+    transform: scale(1.4) rotate(12deg);
+  }
+</style>

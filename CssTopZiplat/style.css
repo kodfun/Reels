@@ -1,0 +1,15 @@
+.box {
+  background-color: skyblue;
+  height: 300px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+@keyframes jump {
+  to { transform: translateY(-200px); }
+}
+
+.ball {
+  animation: jump 1s infinite alternate;
+}

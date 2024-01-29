@@ -1,0 +1,49 @@
+<link href='https://fonts.googleapis.com/css?family=Vibur:400' rel='stylesheet' type='text/css'>
+
+<input type="text" placeholder="Type here..">
+
+<h1 class="neon"></h1>
+
+<style>
+  body {
+    background: black url(bg.jpg);
+    background-size: cover;
+  }
+
+  input[type="text"] {
+    background-color: #333;
+    color: darkgray;
+    font-size: 3rem;
+    margin: 300px auto 5rem;
+    display: block;
+    padding: 1rem;
+    border: 3px solid #fffa;
+    border-radius: .5rem;
+  }
+
+  h1 {
+    margin: 4rem auto;
+    text-align: center;
+    max-width: 900px;
+  }
+
+  .neon {
+    font: 400 128px "Vibur", sans-serif;
+    color: #fff;
+    text-shadow:
+      0 0 7px #fff,
+      0 0 10px #fff,
+      0 0 21px #fff,
+      0 0 42px #f09,
+      0 0 82px #f09,
+      0 0 92px #f09,
+      0 0 102px #f09,
+      0 0 151px #f09;
+  }
+</style>
+
+<script>
+  document.querySelector("input").oninput = (e) => {
+    document.querySelector("h1").textContent = e.target.value;
+  };
+</script>

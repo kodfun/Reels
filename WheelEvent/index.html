@@ -1,0 +1,20 @@
+<style>
+  #bar {
+    width: 100px;
+    height: 40px;
+    background: red;
+    transition: all .2s;
+  }
+</style>
+
+<div id="bar"></div>
+
+<script>
+  const bar = document.getElementById("bar");
+  let w = bar.offsetWidth;
+
+  onwheel = (e) => {
+    w -= e.deltaY;
+    bar.style.width = w + "px";
+  }
+</script>

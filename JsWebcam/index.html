@@ -1,0 +1,15 @@
+
+
+
+
+<video width="800" height="600" autoplay></video>
+<hr><button>Open Webcam</button>
+
+<script>
+  const video = document.querySelector("video");
+
+  document.querySelector("button").onclick = () =>
+    navigator.mediaDevices
+      .getUserMedia({ video: true, audio: false })
+      .then(stream => video.srcObject = stream);
+</script>

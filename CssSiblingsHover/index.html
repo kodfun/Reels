@@ -1,0 +1,22 @@
+<style>
+  div {
+    display: flex;
+    gap: 1rem;
+  }
+
+  div>img {
+    border-radius: 1rem;
+    min-width: 100px;
+    flex: 1;
+  }
+
+  div:has(img:hover)>img:not(:hover) {
+    opacity: .4;
+  }
+</style>
+
+
+<div>
+  <img src="1.jpg"><img src="2.jpg">
+  <img src="3.jpg"><img src="4.jpg">
+</div>

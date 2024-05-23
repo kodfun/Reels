@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spinning Dots Animation</title>
+  <style>
+    @font-face {
+      font-family: "Segoe Boot Semilight";
+      src: local("Segoe Boot Semilight");
+      font-stretch: extra-expanded;
+    }
+
+    .spinner {
+      font-size: 2em;
+      font-family: 'Segoe Boot Semilight';
+    }
+  </style>
+</head>
+
+<body>
+  <div id="spinner" class="spinner"></div>
+
+  <script>
+    // List of Unicode characters representing the spinning dots
+
+    let currentFrame = 0xE052; // -> 0XE0C6
+
+    function updateSpinner() {
+      const spinnerElement = document.getElementById('spinner');
+      spinnerElement.textContent = String.fromCharCode(currentFrame++);
+
+      if (currentFrame > 0XE0C6) currentFrame = 0xE052
+    }
+
+    setInterval(updateSpinner, 40);
+  </script>
+</body>
+
+</html>

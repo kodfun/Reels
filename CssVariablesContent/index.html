@@ -1,0 +1,14 @@
+<ul>
+  <li data-x="Mr.">Smith</li>
+  <li data-x="Mrs.">Johnson</li>
+  <li data-x="Ms.">Brown</li>
+  <li data-x="Bay">KodFun</li>
+</ul>
+
+<style>
+  li::before {
+    content: attr(data-x) " ";
+    color: red;
+    font-style: italic;
+  }
+</style>

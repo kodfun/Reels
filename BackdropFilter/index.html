@@ -1,0 +1,63 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+  href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+  rel="stylesheet">
+
+<style>
+  body {
+    background: url(bg.jpg);
+    background-size: cover;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    font-family: "Lato", sans-serif;
+  }
+
+  nav {
+    animation: anim .4s 10s 1 forwards;
+  }
+
+  nav {
+    border-radius: 12px;
+    background: #ffffff1a;
+    border: 1px solid #ffffff20;
+    backdrop-filter: blur(16px) saturate(120%);
+  }
+
+  @keyframes anim {
+    to {
+      background: #ffffff1a;
+      border-radius: 12px;
+      border: 1px solid #ffffff20;
+      backdrop-filter: blur(16px) saturate(120%);
+    }
+  }
+
+  nav {
+    padding: 0 2vw;
+    margin-top: 2vw;
+
+  }
+
+  nav>a {
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    padding: 1.5vw 2vw;
+    font-size: 2.6vw;
+    font-weight: 500;
+  }
+
+  .brand {
+    font-weight: 600;
+  }
+</style>
+
+<nav>
+  <a href="#" class="brand">KODFUN</a>
+  <a href="#">Home</a>
+  <a href="#">About</a>
+  <a href="#">Services</a>
+  <a href="#">Contact</a>
+</nav>

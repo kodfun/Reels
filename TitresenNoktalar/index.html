@@ -1,0 +1,50 @@
+<style>
+  body {
+    margin: 0;
+  }
+  canvas {
+    background-color: black;
+  }
+</style>
+
+<canvas width="1080" height="1080"></canvas>
+
+<script>
+  const canvas = document.querySelector("canvas");
+  const ctx = canvas.getContext("2d");
+  const dots = [];
+  const rnd = (a, b) => parseInt(Math.floor(Math.random() * (b - a) + a));
+  const rp = () => ({
+    x: rnd(0, canvas.width),
+    y: rnd(0, canvas.height),
+    radius: rnd(1, 2),
+    color: `rgba(${rnd(0, 256)}, ${rnd(0, 256)}, ${rnd(0, 256)}, .1)`
+  }); // random point
+
+  // create dots
+  for (let i = 0; i < 100; i++) {
+    dots.push(rp());
+  }
+
+  function drawAllDots() {
+    for (const dot of dots) {
+      drawDot(dot, dot.radius, dot.color);
+      vibrate(dot);
+    }
+    requestAnimationFrame(drawAllDots);
+  }
+  
+  function vibrate(dot) {
+      dot.x += rnd(-1, 2);
+      dot.y += rnd(-1, 2);
+  }
+
+  function drawDot(location, radius = 2, color = "white") {
+    ctx.beginPath();
+    ctx.arc(location.x, location.y, radius, 0, 2 * Math.PI);
+    ctx.fillStyle = color;
+    ctx.fill();
+  }
+
+  requestAnimationFrame(drawAllDots);
+</script>

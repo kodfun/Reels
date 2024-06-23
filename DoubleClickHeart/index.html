@@ -1,0 +1,71 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+
+  <div class="desc">Double click on the image to <i class="fa-solid fa-heart"></i> it</div>
+
+<img src="backpacker.jpg">
+
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  html, body {
+    height: 100%;
+  }
+  
+  body {
+    margin: 0;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: azure;
+  }
+
+  .desc {
+    font-family: "Oswald", sans-serif;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+  }
+
+  .desc>i {
+    color: red;
+  }
+
+  img {
+    width: 800px;
+    max-width: 100%;
+    border-radius: 1rem;
+    cursor: pointer;
+  }
+
+  .heart { position: absolute; z-index: 999; }
+  .heart::before {
+    font-family: "Font Awesome 6 Free";
+    content: "\f004"; display: inline-block;
+    font-weight: 900; color: red;
+    animation: grow 1s ease-out forwards;
+  }
+  @keyframes grow {
+    to { transform: scale(10); opacity: 0; }
+  }
+</style>
+
+<script>
+  document.querySelector("img").ondblclick = (e) => {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.style.left = e.clientX + "px";
+    heart.style.top = e.clientY + "px";
+    heart.onanimationend = () => heart.remove();
+    document.body.append(heart);
+  };
+</script>

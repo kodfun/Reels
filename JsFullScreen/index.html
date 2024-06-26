@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="style.css">
+
+
+
+<img src="goat.jpg" id="image" height="400">
+
+<button id="btn">
+  Tam Ekran Göster (View it in Full-Screen Mode)
+</button>
+
+<script>
+  const img = document.getElementById("image");
+  const btn = document.getElementById("btn");
+
+  btn.onclick = () => img.requestFullscreen();
+  img.onclick = () => document.exitFullscreen();
+</script>

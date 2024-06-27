@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unicode Catalog</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <style>
+    #right {
+      position: fixed;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #right>img {
+      width: 80%;
+    }
+
+    html {
+      font-size: 64px;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+    }
+
+    table {
+      border-collapse: separate;
+      border-spacing: 0 .2rem;
+    }
+
+    .ch {
+      font-weight: 900;
+      background-color: black;
+      color: white;
+      text-align: center;
+    }
+
+    .nu::before {
+      font-family: "Font Awesome 6 Free";
+      content: "\f061";
+      font-weight: 900;
+      margin: 0 .3rem;
+    }
+
+    .nu {
+      font-family: 'Courier New', Courier, monospace;
+      font-weight: 500;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="right">
+    <img src="utf16.png" alt="utf-16">
+  </div>
+  <table>
+    <thead>
+      <th>C</th>
+      <th>#</th>
+    </thead>
+    <tbody id="tbody">
+
+    </tbody>
+  </table>
+
+  <script>
+    const tbody = document.getElementById("tbody");
+
+    for (let i = 0; i < 256; i++) {
+      tbody.innerHTML += `<tr>
+          <td class="ch">${String.fromCharCode(i)}</td>
+          <td class="nu">${i}</td>
+        </tr>`;
+    }
+
+    setInterval(function() {
+      window.scrollTo({ top: document.documentElement.scrollTop + 5, behavior: 'smooth' })
+    }, 40);
+
+    window.scrollTo({ top: 4800 });
+  </script>
+</body>
+
+</html>

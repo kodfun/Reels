@@ -1,0 +1,63 @@
+<main>
+  <img id="img1" src="dragon.png">
+  <img id="img2" src="dragon.png">
+</main>
+
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    background-color: gray;
+  }
+
+  main {
+    background-color: black;
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 4rem;
+    place-items: center;
+    max-width: 1080px;
+    margin: 3rem auto;
+    padding: 50px 75px;
+  }
+
+  main>img {
+    width: 90%;
+    transition: all 1s;
+  }
+
+img {
+  box-shadow: 2px 2px 20px cyan;
+}
+
+img {
+  filter: drop-shadow(2px 2px 20px cyan);
+}
+
+  .a {
+    box-shadow: 2px 2px 20px cyan;
+  }
+
+  .b {
+    filter: drop-shadow(2px 2px 20px cyan);
+  }
+</style>
+
+<script>
+  let click = 0;
+  const img1 = document.getElementById("img1");
+  const img2 = document.getElementById("img2");
+
+  window.onclick = () => {
+    click++;
+
+    if (click == 1) {
+      img1.className = "a";
+    }
+    else if (click == 2) {
+      img2.className = "b";
+    }
+  };
+</script>

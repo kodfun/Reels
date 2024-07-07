@@ -1,0 +1,162 @@
+<style>
+  body {
+    background-color: black;
+  }
+
+  div {
+    width: 600px;
+    height: 600px;
+    margin-bottom: 1rem;
+    border: 20px solid white;
+  }
+
+  /* Linear Gradient */
+  .l1 {
+    background: linear-gradient(
+      to right, 
+      red, 
+      yellow
+    );
+  }
+
+  /* Radial Gradient */
+  .l2 {
+    background: radial-gradient(
+      cyan, 
+      magenta
+    );
+  }
+
+  /* Repeating Linear */
+  .l3 {
+    background: repeating-linear-gradient(
+      45deg, 
+      orange, 
+      gold 20px
+    );
+  }
+
+  /* multicolor */
+  .l4 {
+    background: linear-gradient(
+      to top left, 
+      magenta, 
+      cyan, 
+      yellow, 
+      orange, 
+      red);
+  }
+
+  /* color-stops */
+  .l5 {
+    background: linear-gradient(
+      90deg, 
+      red 33%, 
+      lime 67%
+    );
+  }
+
+  /* repeating-radial-gradient */
+  .l6 {
+    background: repeating-radial-gradient(
+        black,
+        black 10px,
+        white 10px,
+        white 20px
+    );
+  }
+
+  /* hard lines */
+  .l7 {
+    background: linear-gradient(to right,
+        red 20%,
+        orange 20% 40%,
+        yellow 40% 60%,
+        green 60% 80%,
+        blue 80%);
+  }
+
+  /* color hint */
+  .l8 {
+    background: linear-gradient(
+      to right, 
+      red, 
+      15%, 
+      yellow);
+  }
+
+  /* overlaying */
+  .l9 {
+    background:
+      linear-gradient(45deg, magenta, 10%, transparent, 90%, coral),
+      linear-gradient(135deg, blue, 10%, transparent, 90%, orange),
+      linear-gradient(90deg, purple, 5%, transparent, 95%, red),
+      linear-gradient(180deg, fuchsia, 5%, transparent, 95%, yellow),
+      url(bg.jpg);
+    background-size: cover;
+    background-position: 50% 60%;
+  }
+
+  .l10 {
+    background: repeating-linear-gradient(190deg,
+        rgb(255 0 0 / 50%) 40px,
+        rgb(255 153 0 / 50%) 80px,
+        rgb(255 255 0 / 50%) 120px,
+        rgb(0 255 0 / 50%) 160px,
+        rgb(0 0 255 / 50%) 200px,
+        rgb(75 0 130 / 50%) 240px,
+        rgb(238 130 238 / 50%) 280px,
+        rgb(255 0 0 / 50%) 300px),
+      repeating-linear-gradient(-190deg,
+        rgb(255 0 0 / 50%) 30px,
+        rgb(255 153 0 / 50%) 60px,
+        rgb(255 255 0 / 50%) 90px,
+        rgb(0 255 0 / 50%) 120px,
+        rgb(0 0 255 / 50%) 150px,
+        rgb(75 0 130 / 50%) 180px,
+        rgb(238 130 238 / 50%) 210px,
+        rgb(255 0 0 / 50%) 230px),
+      repeating-linear-gradient(23deg,
+        red 50px, orange 100px, yellow 150px, green 200px,
+        blue 250px, indigo 300px, violet 350px, red 370px);
+  }
+  /* Multiple repeating conic gradients */
+  .l11 {
+    background: repeating-conic-gradient(
+      from 0deg at 80% 50%,
+      #5691f580 0% 8.25%,
+      #b338ff80 8.25% 16.5%,
+      #f8305880 16.5% 25%
+    ),
+    repeating-conic-gradient(
+      from 15deg at 50% 50%,
+      #e856f580 0% 8.25%,
+      #ff384c80 8.25% 16.5%,
+      #e7f83080 16.5% 25%
+    ),
+    repeating-conic-gradient(
+      from 0deg at 20% 50%,
+      #f58356ff 0% 8.25%,
+      #caff38ff 8.25% 16.5%,
+      #30f88aff 16.5% 25%
+    );
+  }
+</style>
+
+<div class="l11"></div>
+<div class="l10"></div>
+<div class="l9"></div>
+<div class="l8"></div>
+<div class="l7"></div>
+<div class="l6"></div>
+<div class="l5"></div>
+<div class="l4"></div>
+<div class="l3"></div>
+<div class="l2"></div>
+<div class="l1"></div>
+
+<script>
+  window.ondblclick = () => {
+    document.querySelector("div").remove();
+  };
+</script>

@@ -1,0 +1,32 @@
+<div class="container">
+  <div>X</div>
+  <div>O</div>
+  <div>X</div>
+  <div>O</div>
+  <div>X</div>
+  <div>O</div>
+  <div>O</div>
+  <div>X</div>
+  <div>O</div>
+</div>
+
+<style>
+  html, body, .container {
+    height: 100%;
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    font-size: 20vmin;
+    font-family: 'Gill Sans', sans-serif;
+    gap: 1rem;
+  }
+
+  .container>div {
+    background-color: pink;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+</style>

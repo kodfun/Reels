@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>❤︎ Orange Cat Fan Page ❤︎</title>
+</head>
+
+<body>
+  <nav>
+    <a onclick="hide()">
+      &times;
+    </a>
+    <img src="cat.png">
+  </nav>
+  <main>
+    <h1>I am a cat!</h1>
+    <p>Meow...</p>
+    <button onclick="show()">
+      Where am I?
+    </button>
+  </main>
+  <style>
+    nav {
+      position: fixed; top: 0; left: 0; width: 0px; height: 100%; 
+      overflow-x: hidden; background: #111; color: #fff;
+    }
+    a {
+      display: block; font-size: 3rem; width: 3rem;
+      margin-left: auto; cursor: pointer;
+    }
+  </style>
+  <script>
+    function show() {
+      document.querySelector("nav").style.width = "300px";
+      document.querySelector("main").style.marginLeft = "300px";
+    }
+    function hide() {
+      document.querySelector("nav").style.width = "0";
+      document.querySelector("main").style.marginLeft = "0";
+    }
+  </script>
+
+  <style>
+    html, button {
+      font-size: 36px;
+    }
+  </style>
+</body>
+
+</html>

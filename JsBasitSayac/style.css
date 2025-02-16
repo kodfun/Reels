@@ -1,0 +1,63 @@
+/* Sayfanın genel arka plan rengi */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f9;
+    /* Hafif açık gri tonu */
+    background: repeating-linear-gradient(45deg,
+            /* Eğik açı */
+            #f9f9f9,
+            /* Çok açık gri */
+            #f9f9f9 10px,
+            /* İlk renk 10px genişliğinde */
+            #e6e6e6 10px,
+            /* Daha koyu bir açık gri */
+            #e6e6e6 20px
+            /* İkinci renk 20px genişliğinde */
+        );
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+/* Büyük ve güzel görünen buton */
+button {
+    background-color: #6200ea;
+    /* Morumsu bir ton */
+    color: white;
+    /* Yazı rengi beyaz */
+    border: none;
+    /* Kenarlık yok */
+    padding: 15px 30px;
+    /* İç boşluklar */
+    font-size: 18px;
+    /* Yazı boyutu */
+    font-weight: bold;
+    /* Kalın yazı */
+    border-radius: 10px;
+    /* Yuvarlak köşeler */
+    cursor: pointer;
+    /* Fare üzerine geldiğinde el işareti */
+    transition: all 0.3s ease;
+    /* Geçiş efekti */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Hafif gölge */
+}
+
+/* Butona tıklanırken veya üzerine gelindiğinde efektler */
+button:hover {
+    background-color: #3700b3;
+    /* Daha koyu mor */
+    transform: scale(1.05);
+    /* Biraz büyütme efekti */
+}
+
+button:active {
+    background-color: #0d47a1;
+    /* Tıklanınca daha koyu mavi */
+    transform: scale(0.95);
+    /* Biraz küçültme efekti */
+}

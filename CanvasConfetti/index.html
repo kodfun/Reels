@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap');
+
+        button {
+            background: white;
+            color: black;
+            border: 2px solid black;
+            padding: 10px 20px;
+            font-size: 24px;
+            font-family: 'Fredoka', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            outline: none;
+            position: relative;
+        }
+
+        button:hover {
+            background: black;
+            color: white;
+        }
+
+        /* Tıklanınca basılma efekti */
+        button:active {
+            transform: scale(0.95);
+            /* Hafif küçülme efekti */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) inset;
+            /* İçeri basılmış hissi */
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- https://github.com/catdad/canvas-confetti -->
+
+    <script src="confetti.js"></script>
+
+    <button onclick="confetti()">
+        BOOM! 🎆
+    </button>
+
+</body>
+
+</html>

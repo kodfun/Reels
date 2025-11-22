@@ -1,0 +1,12 @@
+Sadece CSS kullanarak bir paragrafı gizleyip göstermek
+
+Elimizde bir checkbox ve hemen ardından gelen bir paragraf var.
+Amacımız, checkbox işaretlendiğinde bu paragrafın görünmesini sağlamak.
+
+Hadi başlayalım!
+
+Önce display: none ile paragrafı gizliyoruz.
+
+Ardından :checked sözde sınıfını kullanarak, goster id’li checkbox işaretliyse hemen ardından gelen paragrafın görünmesini sağlıyoruz.
+
+Hepsi bu kadar. 🎉

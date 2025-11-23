@@ -1,0 +1,44 @@
+<input type="text" id="saat">
+
+<script>
+    setInterval(() => {
+        document.getElementById("saat").value = 
+            new Date().toLocaleTimeString("tr")
+    }, 1000);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+    html, body {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    input {
+        font-size: 4rem;
+        width: 300px;
+    }
+</style>

@@ -1,0 +1,40 @@
+<div class="countdown"></div>
+
+<style>
+    @keyframes fun {
+        0%   { content: "10"; }
+        10%  { content: "9"; }
+        20%  { content: "8"; }
+        30%  { content: "7"; }
+        40%  { content: "6"; }
+        50%  { content: "5"; }
+        60%  { content: "4"; }
+        70%  { content: "3"; }
+        80%  { content: "2"; }
+        90%  { content: "1"; }
+        100% { content: "💥"; }
+    }
+    .countdown::before {
+        content: "10";
+        animation: fun 10s linear forwards;
+    }
+</style>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Ultra&display=swap');
+</style>
+
+<style>
+    html,
+    body {
+        font-family: "Ultra", serif;
+        height: 100%;
+        margin: 0;
+        background: #fff;
+        color: #000;
+        font-size: 30vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+</style>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Light/Dark Mode</title>
+
+    <style>
+        :root {
+            --bg: #fff; --text: #111;
+        }
+
+        html:has(#dark:checked) {
+            --bg: #111; --text: #eee;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            transition: .25s;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <label>
+        <input id="dark"
+            type="checkbox">
+        Dark mode (Gece modu)
+    </label>
+
+    <h1>Hello World</h1>
+
+    <p>
+        Merhaba Dünya | KodFun
+    </p>
+
+</body>
+
+</html>

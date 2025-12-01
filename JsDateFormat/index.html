@@ -1,0 +1,28 @@
+
+<script>
+    document.write(Date() + "<br>");
+    
+    document.write(
+        new Date().toLocaleDateString("tr", {
+            day: "2-digit",
+            month: "short",
+            year: "numeric",
+            weekday: "long"
+        })
+    );
+</script>
+
+
+<style>
+    hr {
+        margin: 0;
+        width: 800px;
+        margin-bottom: 2rem;
+    }
+    body {
+        background-color: black;
+        color: white;
+        padding: 1rem;
+        font-size: 2em;
+    }
+</style>

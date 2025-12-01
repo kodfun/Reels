@@ -1,0 +1,31 @@
+<meta charset="UTF-8">
+
+<div id="before">ABCÇDEFGĞHIİJKLMNOÖPRSŞTUÜVYZ❤</div>
+<div id="alfabe">ABCÇDEFGĞHIİJKLMNOÖPRSŞTUÜVYZ❤</div>
+
+<script>
+    let div = document.getElementById("alfabe");
+    let txt = div.textContent;
+    div.innerHTML = txt.split("")
+                        .map(x => `<span>${x}</span>`)
+                        .join("");
+</script>
+
+<style>
+    #alfabe {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: .5rem;
+    }
+
+    #alfabe>span {
+        border: 3px solid black;
+        border-radius: 1rem;
+        display: block;
+        aspect-ratio: 1/1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3em;
+    }
+</style>

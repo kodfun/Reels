@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resim Kaydırıcı</title>
+    <style>
+        /* 1. Sayfa Düzeni ve Ortalama */
+        body {
+            display: flex;
+            justify-content: center;
+            /* Yatayda ortalama */
+            align-items: center;
+            /* Dikeyde ortalama */
+            min-height: 100vh;
+            /* Ekranın tamamını kapla */
+            margin: 0;
+            background-color: #fff;
+            /* Hafif gri arka plan */
+            font-family: sans-serif;
+        }
+
+        /* 2. Resim Stili */
+        img {
+            width: 400px;
+            /* Sabit bir genişlik */
+            height: 300px;
+            /* Sabit bir yükseklik */
+            object-fit: cover;
+            /* Resmin boyutlara uyarken bozulmamasını sağlar */
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            /* Derinlik veren gölge */
+            transition: transform 0.3s ease;
+            /* Resim değişirken hafif animasyon */
+            margin: 0 20px;
+            /* Butonlarla aralık bırak */
+        }
+
+        /* 3. Buton Stilleri */
+        button {
+            background-color: #007bff;
+            /* Mavi renk */
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            border-radius: 8px;
+            font-size: 1.5em;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        button:hover {
+            background-color: #0056b3;
+            /* Hover'da daha koyu mavi */
+            transform: translateY(-2px);
+            /* Hafif yukarı kaydırma efekti */
+        }
+
+        button:active {
+            transform: translateY(0);
+            /* Tıklamada geri gelme efekti */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 0.png 1.png 2.png 3.png 4.png 5.png -->
+    <button onclick="show(-1)">←</button>
+    <img id="img" src="0.png">
+    <button onclick="show(+1)">→</button>
+
+    <script>
+        let x = 0, max = 6;
+        img = document.getElementById("img");
+
+        function show(num) {
+            x = (x + num + max) % max; // [0, 5]
+            img.src = x + ".png";
+        }
+    </script>
+
+
+    <!-- FOR DEMO -->
+    <style>
+        .image-container {
+            /* Sözde elementin bu konteynere göre konumlanması için zorunludur */
+            position: relative;
+
+            /* Gerekirse, resim ve butonları yatayda ortalar */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image-container::after {
+            /* 1. İçerik: data-x niteliğinin değerini oku */
+            content: attr(data-x);
+
+            /* 2. Konumlandırma */
+            position: absolute;
+
+            /* X ekseninde ortalama: soldan 50% ve kendini 50% sola kaydırma */
+            left: 50%;
+            transform: translateX(-50%);
+
+            /* Y ekseninde (resmin) altına konumlandırma */
+            /* Resminizin yüksekliği 300px ise, 300px altından başlar. 
+       Ya da resmin alt kenarına yapışık olmasını istiyorsanız alttaki satır yeterli: */
+            bottom: -30px;
+            /* Resmin altından 25 piksel aşağıda */
+
+            /* 3. Stil */
+            background-color: rgba(0, 0, 0, 0.75);
+            /* Yarı saydam siyah arka plan */
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            z-index: 10;
+            /* Diğer elementlerin üzerinde görünmesini sağlar */
+            white-space: nowrap;
+            /* Metnin tek satırda kalmasını sağlar */
+        }
+    </style>
+    <script>
+        /* Sizin JS'niz: */
+        img.onload = function () {
+            img.parentNode.setAttribute("data-x", img.getAttribute("src"));
+        };
+
+        /* ! EKLENMESİ GEREKEN KISIM: */
+        // img elementini saracak bir container oluşturun:
+        const container = document.createElement('div');
+        container.classList.add('image-container');
+        img.parentNode.insertBefore(container, img);
+        container.appendChild(img);
+    </script>
+</body>
+
+</html>

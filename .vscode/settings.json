@@ -3,6 +3,7 @@
     "[javascript]": {
         "editor.inlineSuggest.enabled": false
     },
+    "editor.lineNumbers": "off",
     "editor.parameterHints.cycle": true,
     "editor.parameterHints.enabled": false,
     "editor.suggestOnTriggerCharacters": false,

@@ -1,0 +1,70 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+</style>
+
+<div class="container">
+    <div class="text-mask">KodFun</div>
+</div>
+
+<style>
+    body {
+
+        background: linear-gradient(135deg,
+                #0b1020 0%,
+                #0f172a 50%,
+                #111827 100%);
+        color: white;
+
+        /* background-image: url(ReelsSafe.png);
+        background-repeat: no-repeat;
+        background-position: center 0; */
+    }
+
+    div.container {
+        margin: 0;
+        height: 400px;
+        max-width: 1080px;
+        margin: 0 auto;
+        /* Reels için tam ekran */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* Dış arka plan koyu */
+    }
+
+    div.text-mask {
+        font-family: "Montserrat", sans-serif;
+        font-size: 11rem;
+        text-transform: uppercase;
+        /* letter-spacing: 0.5rem; */
+        font-weight: 900;
+        margin-top: 16rem;
+    }
+
+
+
+
+
+
+
+    @keyframes move{to{ background-position-x:-277px;}}
+
+    .text-mask {
+        background: url("bg.png") 0 center;
+        animation: move 6s linear infinite;
+        color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
+    }
+
+
+
+
+
+
+
+
+
+
+
+</style>

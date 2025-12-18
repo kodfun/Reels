@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jumping Bunny</title>
+    <style>
+        .platform {
+            height: 400px;
+            background-color: skyblue;
+            display: flex;
+            align-items: flex-end;
+            border-bottom: 40px solid brown;
+        }
+    </style>
+</head>
+<body>
+
+<div class="platform">
+    <img onclick="jump(this)" src="rabbit.png">
+</div>
+
+<script>
+let x = 0;
+
+function jump(img) {
+    const jumpDistance = 160;
+
+    img.animate(
+        [
+            { transform: `translate(${x}px, 0)` },
+            { transform: `translate(${x + jumpDistance / 2}px, -60px)` },
+            { transform: `translate(${x + jumpDistance}px, 0)` }
+        ],
+        {
+            duration: 500,
+            easing: "ease-out",
+            fill: "forwards"
+        }
+    );
+
+    x += jumpDistance; // 👈 yeni pozisyonu kaydet
+}
+</script>
+
+
+</body>
+</html>

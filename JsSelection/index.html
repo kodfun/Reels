@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metin Seçimi</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            max-width: 500px;
+            width: 100%;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        h1 {
+            font-size: 36px;
+            color: #2d3748;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        p {
+            font-size: 22px;
+            color: #4a5568;
+            margin-bottom: 15px;
+            line-height: 1.4;
+            user-select: text;
+            cursor: text;
+        }
+        
+        #txt {
+            background: #f7fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 15px;
+            font-size: 26px;
+            color: #2d3748;
+            font-weight: 600;
+            min-height: 60px;
+            word-break: break-word;
+            transition: all 0.3s ease;
+        }
+        
+        .txt.empty {
+            color: #a0aec0;
+        }
+    </style>
+</head>
+
+
+
+
+
+
+
+<body>
+
+<div class="container">
+    <h1>Metin Seçimi</h1>
+    <p>Hayat seçimlerden ibarettir. Her seçim yeni 
+     bir kapı açar. Hangi kelimeyi seçeceksin?</p>
+    <div id="txt"></div>
+</div>
+<script>
+    const txt = document.getElementById("txt");
+
+    document.addEventListener("mouseup", () => {
+        txt.textContent = window.getSelection().toString()
+    });
+</script>
+
+</body>
+</html>

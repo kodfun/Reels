@@ -1,0 +1,24 @@
+<input type="password" id="pwd">
+<button onclick="show()">👁️</button>
+
+<script>
+    const pwd = document.getElementById("pwd");
+
+    function show() {
+        pwd.type = pwd.type == "password" 
+                             ? "text" 
+                             : "password";
+    }
+</script>
+
+<style>
+    input {
+        padding: 2px;
+        transform: translateY(-1px);
+        width: 100px;
+    }
+
+    body {
+        background-color: #fdfdfd;
+    }
+</style>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13. Fareyi Kovalayan Kedi</title>
+    <style>
+        body {
+            overflow: hidden;
+        }
+
+        #cat {
+            position: absolute;
+            transition: all .2s;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="cat">🐱</div>
+    <script>
+        const cat = document.getElementById("cat");
+
+        document.onmousemove = (e) => {
+            cat.style.left = e.clientX + "px";
+            cat.style.top = e.clientY + "px";
+        };
+    </script>
+</body>
+
+</html>

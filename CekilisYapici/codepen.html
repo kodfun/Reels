@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Çekiliş Yapıcı - CodePen Version</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 40px;
+        }
+
+        h1 {
+            font-size: 44px;
+            color: white;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            margin-bottom: 25px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-align: center;
+        }
+
+        textarea {
+            width: 100%;
+            max-width: 600px;
+            min-height: 154px;
+            padding: 20px;
+            font-size: 24px;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            resize: none;
+            outline: none;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.95);
+            margin-bottom: 25px;
+        }
+
+        textarea:focus {
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .result-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        button {
+            width: 70px;
+            height: 70px;
+            padding: 0;
+            font-size: 28px;
+            color: white;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(245, 87, 108, 0.4);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 12px 35px rgba(245, 87, 108, 0.6);
+        }
+
+        button:active {
+            transform: translateY(-1px) scale(1.02);
+        }
+
+        h2 {
+            font-size: 36px;
+            color: white;
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            min-width: 150px;
+            min-height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px 30px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            animation: pulse 2s ease-in-out infinite;
+            flex: 1;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.02);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<h1>🌍 Nereye Gideyim? 🤔✈️</h1>
+
+<textarea placeholder="Gidilecek yerleri buraya yaz...">Bali
+Tayland
+Vietnam
+Yozgat</textarea>
+
+<div class="result-container">
+    <button>🎲</button>
+    <h2>?</h2>
+</div>
+
+<script>
+const txt = document.querySelector("textarea");
+const btn = document.querySelector("button");
+const h2 = document.querySelector("h2");
+
+btn.onclick = () => {
+    const arr = txt.value.split("\n");
+    let i = Math.floor(Math.random() * arr.length);
+    h2.textContent = "📌 " + arr[i];
+};
+</script>
+
+</body>
+</html>

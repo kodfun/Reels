@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Çekiliş Yapıcı</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>🌍 Nereye Gideyim? 🤔✈️</h1>
+    
+<textarea placeholder="Gidilecek yerleri buraya yaz...">
+Bali
+Tayland
+Vietnam
+Yozgat</textarea>
+    
+    <div class="result-container">
+        <button>🎲</button>
+        <h2>?</h2>
+    </div>
+</div>
+
+<script>
+const txt = document.querySelector("textarea");
+const btn = document.querySelector("button");
+const h2 = document.querySelector("h2");
+
+btn.onclick = () => {
+    const arr = txt.value.split("\n");
+    let i = Math.floor(Math.random() * arr.length);
+    h2.textContent = "📌 " + arr[i];
+};
+
+</script>
+
+</body>
+</html>
